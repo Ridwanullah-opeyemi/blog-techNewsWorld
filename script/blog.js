@@ -1,51 +1,7 @@
-// header part
-let lastScrollTop = 0;
-const header1 = document.getElementById('header1');
-const header2 = document.getElementById('header2');
-const backUp = document.getElementById('backUp');
-const line = document.getElementById('line');
-const headHide = document.getElementById('headHide');
-
-window.addEventListener('scroll', function () {
-    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-    if (scrollTop > lastScrollTop) {
-        sec01.classList.add('margin')
-        backUp.style.display = 'block'
-        header2.classList.add('headervisible');
-        headHide.classList.remove('headervisible');
-        line.style.display = 'block'
-        // header2.style.display = "none";
-        //   header1.classList.remove('header-hidden');
-    } else {
-        header2.classList.remove('headervisible');
-        headHide.classList.add('headervisible');
-        sec01.classList.remove('margin')
-        backUp.style.display = 'none'
-        line.style.display = 'none'
-        
-        // header2.style.display = "block"
-        // header1.classList.add('header-hidden');
-    }
-    //   lastScrollTop = scrollTop;
-});
-// backUp.addEventListener('click',()=>{
-//     backUp.style.display = 'nonee'
-// })
 
 
-// sign in part
-signInForm.addEventListener("submit", signInUser)
-async function signInUser(e) {
-    e.preventDefault()
-    let { username, password } = signInForm;
-    let uInfo = {
-        name: username.value,
-        password: password.value
-    }
-    console.log(uInfo);
 
-}
+
 
 
 
@@ -107,7 +63,7 @@ let cardArray = [
 
 cardArray.forEach((card) => {
     let { Image, title, text } = card
-    console.log(Image);
+    // console.log(Image);
     cardContainer.innerHTML += `
              <div class="news-card">
                 <div class="card-img">
@@ -291,7 +247,7 @@ setTimeout(() => {
 
     startCarousel();
     updateCarousel();
-}, 0); // Delay to allow DOM updates
+}, 100); // Delay to allow DOM updates
 
 
 
@@ -308,18 +264,6 @@ setTimeout(() => {
 
 
 
-// menu part
-const menuIcon = document.getElementById('menuIcon');
-const fullScreenMenu = document.getElementById('fullScreenMenu');
-const closeMenu = document.getElementById('closeMenu');
-
-menuIcon.addEventListener('click', () => {
-    fullScreenMenu.classList.add('show');
-});
-
-closeMenu.addEventListener('click', () => {
-    fullScreenMenu.classList.remove('show');
-});
 
 
 
@@ -328,32 +272,6 @@ closeMenu.addEventListener('click', () => {
 
 
 
-
-// date 
-function formatDateTime() {
-    const now = new Date();
-    
-    // Get date components
-    const options = { month: 'long', day: 'numeric', year: 'numeric' }; // Format: "January 16, 2025"
-    const datePart = now.toLocaleDateString('en-US', options);
-
-    // Get time components
-    let hours = now.getHours();
-    const minutes = now.getMinutes().toString().padStart(2, '0');
-    const seconds = now.getSeconds().toString().padStart(2, '0');
-    const ampm = hours >= 12 ? 'PM' : 'AM';
-    hours = hours % 12 || 12; // Convert to 12-hour format
-    
-    const timePart = `${hours.toString().padStart(2, '0')}:${minutes}:${seconds} ${ampm}`;
-
-    // Combine date and time
-    const formattedDateTime = `${datePart} ${timePart}`;
-    document.getElementById('dateTime').textContent = formattedDateTime;
-}
-
-// Update every second
-setInterval(formatDateTime, 1000);
-formatDateTime(); // Call once to set initial value
 
 
 

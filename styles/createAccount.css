@@ -1,0 +1,174 @@
+body {
+    font-family: system-ui,'Segoe UI','Open Sans', 'Helvetica Neue', sans-serif sans-serif;
+    padding: 0;
+    margin: o;
+    box-sizing: border-box;
+}
+
+h1 {
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+.member {
+    font-size: 1.2em;
+    margin-bottom: 25px;
+    margin-top: 10px;
+}
+
+.create-section {
+    width: 80%;
+    margin-top: 20px;
+    margin-inline: auto;
+}
+
+.create-head{
+    display: flex;
+}
+
+.create-head div {
+    color: #d11f26;
+}
+
+.create-head div a{
+    color: #d11f26;
+    text-decoration: none;
+}
+
+.create-head div a:hover{
+    text-decoration: underline;
+}
+
+.includes {
+    margin-bottom: 20px;
+}
+
+.includes li {
+    margin-bottom: 5px;
+    list-style-type: none;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: calc(100% - 12px);
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+
+
+
+.main-menu {
+    width: 200px;
+    padding-right: 20px;
+}
+
+.main-menu a {
+    display: block;
+    padding: 8px 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.main-menu a:hover {
+    background-color: #f0f0f0;
+}
+
+.submenu {
+    padding-left: 20px;
+}
+
+.submenu a {
+    display: block;
+    padding: 5px 0;
+    text-decoration: none;
+    color: #333;
+}
+
+.see-all {
+    text-align: right;
+    font-size: smaller;
+}
+
+.see-all a {
+    text-decoration: none;
+    color: black;
+}
+
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    appearance: none;
+    background: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") no-repeat right 10px center;
+    padding-right: 30px;
+}
+
+.email-info {
+    margin-bottom: 15px;
+    font-size: 15px;
+}
+
+.email-info p a {
+    color: #f9030b;
+    text-decoration: none;
+}
+
+.email-info p a:hover {
+    color: #ff0008;
+    text-decoration: underline;
+}
+
+.recaptcha {
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.recaptcha>div {
+    margin-left: 10px;
+}
+
+form {
+    width: 65%;
+}
+
+button {
+    background-color: #d11f26;
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+    font-weight: bold;
+    font-size: larger;
+}
+
+.g-recaptcha {
+    margin-bottom: 15px;
+}
+
+.asterisk {
+    color: #000000;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 50px;
+}
+
+.date {
+    font-size: small;
+}

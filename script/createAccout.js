@@ -53,7 +53,7 @@ async function createUserAccount(e) {
     const docRef = doc(colRef, res.user.uid);
     await setDoc(docRef, detail);
     alert("User Account created Successfully")
-    window.location.href = "./blog.html"
+    window.location.href = "../index.html"
 }
 
 

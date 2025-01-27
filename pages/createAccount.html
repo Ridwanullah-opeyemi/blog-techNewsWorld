@@ -3,54 +3,90 @@
 
 <head>
     <title>TechNewsWorld Registration</title>
-    <!-- <link rel="stylesheet" href="./header.css"> -->
-    <link rel="stylesheet" href="./createAccount.css">
-    <link rel="stylesheet" href="./footer.css">
+    <link rel="stylesheet" href="../styles/header.css">
+    <link rel="stylesheet" href="../styles/createAccount.css">
+    <link rel="stylesheet" href="../styles/footer.css">
 </head>
 
 <body>
 
     <header>
+        <div class="header-fixed top" id="header1">
 
-        <head class="head01">
-            <nav class="nav01"><a href="#">ECT News Network Editors' Pick Newsletter » View Sample | Subscribe</a></nav>
-        </head>
-        <div class="hdr-top for-desk">
-            <div class="container">
-                <ul class="f-ul">
-                    <li><a href="#">WELCOME GUEST | </a></li>
-                    <li class="sign-in"><a href="#"> SIGN IN</a></li>
-                </ul>
-                <ul class="s-ul">
-                    <li><a href="#">E-COMMERCE TIMES |</a></li>
-                    <li><a href="#">CRM BUYER |</a></li>
-                    <li><a href="#">LINUXINSIDER |</a></li>
-                    <li><a href="#">ECTNEWS.COM |</a></li>
-                    <li><a href="#">ADVERTISING</a></li>
-                </ul>
+            <head class="head01">
+                <nav class="nav01"><a href="#">Get Tech Industry News and Insights in the TechNewsWorld Newsletter »
+                        View
+                        Sample | Subscribe</a></nav>
+            </head>
+            <div class="fixed-backgrand">
+                <div class="hdr-top for-desk">
+                    <div class="container">
+                        <ul class="f-ul">
+                            <li><a href="#">WELCOME GUEST </a></li>
+                            <li class="sign-in">
+                                <a>
+                                    <div onclick="
+                                document.getElementById('Sign-in-box').style.display = 'block'
+                                ">| SIGN IN</div>
+                                </a>
+                            </li>
+                        </ul>
+                        <ul class="s-ul">
+                            <li><a href="#">E-COMMERCE TIMES |</a></li>
+                            <li><a href="#">CRM BUYER |</a></li>
+                            <li><a href="#">LINUXINSIDER |</a></li>
+                            <li><a href="#">ECTNEWS.COM |</a></li>
+                            <li><a href="#">ADVERTISING</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="hdr-bttm">
+                    <div class="f-hdr-bttm">
+                        <img src="./pics/TNW-Logo-580x200-1.png" alt="" width="200">
+                    </div>
+                    <div class="menu-icon2" id="menuIcon">&#9776;</div>
+                    <div class="s-hdr-bttm">
+                        <div class="hdr-fs">
+                            <ul>
+                                <li><a href="#">COMPUTING | </a></li>
+                                <li><a href="#">INTERNET | </a></li>
+                                <li><a href="#">IT |</a></li>
+                                <li><a href="#">MOBILE TECH | </a></li>
+                                <li><a href="#">REVIEWS | </a></li>
+                                <li><a href="#">SECURITY | </a></li>
+                                <li><a href="#">TECH BLOG | </a></li>
+                                <li><a href="#">TECHNOLOGY | </a></li>
+                                <li><a href="#">MOST POPULAR | </a></li>
+                                <li><a href="#">NEWSLETTER</a></li>
+                            </ul>
+                            <hr id="line">
+                        </div>
+                        <div class="hdr-ss" id="headHide">
+                            <div class="srch-hid">
+                                <h1>FRONT PAGE</h1>
+                                <div class="search-con">
+                                    <div class="search-container2">
+                                        <input type="text" class="search-input2" placeholder="SEARCH">
+                                        <span class="search-icon">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                                                class="bi bi-search" viewBox="0 0 16 16">
+                                                <path
+                                                    d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
+                                            </svg>
+                                        </span>
+                                    </div>
+                                    <div class="menu-icon" id="menuIcon">&#9776;</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
+
         </div>
-        <div class="hdr-bttm">
-            <div class="f-hdr-bttm">
-                <img src="./pics/TNW-Logo-580x200-1.png" alt="" width="200">
-            </div>
-            <div class="s-hdr-bttm">
-                <ul>
-                    <li><a href="#">COMPUTING | </a></li>
-                    <li><a href="#">INTERNET | </a></li>
-                    <li><a href="#">IT |</a></li>
-                    <li><a href="#">MOBILE TECH | </a></li>
-                    <li><a href="#">REVIEWS | </a></li>
-                    <li><a href="#">SECURITY | </a></li>
-                    <li><a href="#">TECH BLOG | </a></li>
-                    <li><a href="#">TECHNOLOGY | </a></li>
-                    <li><a href="#">MOST POPULAR | </a></li>
-                    <li><a href="#">NEWSLETTER</a></li>
-                </ul>
-            </div>
-        </div>
-        <div class="srch-sec">
-            <h1>Registration</h1>
+
+        <div class="srch-sec" id="header2">
+            <h1>FRONT PAGE</h1>
             <div class="search-con">
                 <div class="search-container">
                     <input type="text" class="search-input" placeholder="SEARCH">
@@ -65,7 +101,7 @@
                 <div class="menu-icon" id="menuIcon">&#9776;</div>
             </div>
         </div>
-        <div></div>
+        <!-- <div></div> -->
 
 
 
@@ -122,7 +158,59 @@
                 </div>
             </div> -->
         </div>
+        <a href="#top" class="a">
+            <div class="back-up" id="backUp" onclick="
+            document.getElementById('backUp').style.display = 'none';
+                ">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor"
+                    class="bi bi-chevron-up" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd"
+                        d="M7.646 4.646a.5.5 0 0 1 .708 0l6 6a.5.5 0 0 1-.708.708L8 5.707l-5.646 5.647a.5.5 0 0 1-.708-.708z" />
+                </svg>
+
+            </div>
+        </a>
     </header>
+
+
+
+    <!-- sign in part -->
+
+    <section class="Sign-in-box" id="Sign-in-box">
+        <div class="signin-container">
+            <div class="close-button-menu">
+                <span class="close-button" onclick="
+                document.getElementById('Sign-in-box').style.display = 'none'
+                ">&times;</span>
+            </div>
+
+            <h2>Existing Members</h2>
+            <p>Enter your Username and Password to sign in.</p>
+            <form id="signInForm">
+                <!-- <label for="username">Username</label> -->
+                <input type="text" id="username" name="username" placeholder="username">
+
+                <!-- <label for="password">Password</label> -->
+                <input type="text" id="password" name="password" placeholder="password">
+
+                <div class="submit-t">
+
+                    <button type="submit" onclick="alert('hello')">SIGN IN</button>
+                </div>
+            </form>
+            <div class="links">
+                <div>Forgot Password?<a href="./pages/resetpassword.html"> Click here</a></div>
+                <div>Not a member yet? <a href="./pages/createAccount.html">Join now!</a></div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
     <section class="create-section">
         <div class="header">
             <div class="create-head"><div><a href="#">TECHNEWSWORLD </a> • </div> REGISTRATION</div>
@@ -379,7 +467,9 @@
          
     </div>
 
-  <script type="module" src="./createAccout.js"></script>
+  <script type="module" src="../script/createAccout.js"></script>
+  <script type="module" src="../script/header.js"></script>
+  <!-- <script src="../script/blog.js"></script> -->
 </body>
 
 </html>
