@@ -1,19 +1,21 @@
-<html lang="en">
+ <html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tech Blog | TechNewsWorld</title>
 
-    <link rel="stylesheet" href="./styles/blog.css">
-    <!-- <link rel="stylesheet" href="./styles/header.css"> -->
+    <link rel="shortcut icon" href="./pics/tnw-icon.jpg" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/footer.css">
+    <link rel="stylesheet" href="./styles/blog.css">
     <style>
 
     </style>
 </head>
 
 <body>
+    <!-- header part -->
     <header>
         <div class="header-fixed top" id="header1">
 
@@ -26,12 +28,15 @@
                 <div class="hdr-top for-desk">
                     <div class="container">
                         <ul class="f-ul">
-                            <li><a href="#">WELCOME GUEST </a></li>
+                            <li><a href="#">WELCOME NAME </a></li>
                             <li class="sign-in">
                                 <a>
-                                    <div onclick="
-                                document.getElementById('Sign-in-box').style.display = 'block'
-                                ">| SIGN IN</div>
+                                    <div><a href="./pages/settings.html">| SETTINGS</a></div>
+                                </a>
+                            </li>
+                            <li class="sign-in">
+                                <a>
+                                    <div id="signOutButton">| SIGN OUT</div>
                                 </a>
                             </li>
                         </ul>
@@ -46,9 +51,9 @@
                 </div>
                 <div class="hdr-bttm">
                     <div class="f-hdr-bttm">
-                        <img src="./pics/TNW-Logo-580x200-1.png" alt="" width="200">
+                        <img src="../pics/TNW-Logo-580x200-1.png" alt="" width="200">
                     </div>
-                    <div class="menu-icon2" id="menuIcon">&#9776;</div>
+                    <div class="menu-icon2" id="menuIcon">&#9776;</div>    
                     <div class="s-hdr-bttm">
                         <div class="hdr-fs">
                             <ul>
@@ -67,19 +72,20 @@
                         </div>
                         <div class="hdr-ss" id="headHide">
                             <div class="srch-hid">
-                                <h1>FRONT PAGE</h1>
+                                <h1>TECH BLOG</h1>
                                 <div class="search-con">
                                     <div class="search-container2">
                                         <input type="text" class="search-input2" placeholder="SEARCH">
                                         <span class="search-icon">
-                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                                class="bi bi-search" viewBox="0 0 16 16">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                                fill="currentColor" class="bi bi-search" viewBox="0 0 16 16">
                                                 <path
                                                     d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001q.044.06.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1 1 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0" />
                                             </svg>
                                         </span>
                                     </div>
-                                    <div class="menu-icon" id="menuIcon">&#9776;</div>
+                                    <div class="menu-icon" id="menuIcon"
+                                        onclick=" fullScreenMenu.classList.add('show');">&#9776;</div>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +96,7 @@
         </div>
 
         <div class="srch-sec" id="header2">
-            <h1>FRONT PAGE</h1>
+            <h1>Tech BLOG</h1>
             <div class="search-con">
                 <div class="search-container">
                     <input type="text" class="search-input" placeholder="SEARCH">
@@ -102,7 +108,7 @@
                         </svg>
                     </span>
                 </div>
-                <div class="menu-icon" id="menuIcon">&#9776;</div>
+                <div class="menu-icon" id="menuIcon" onclick=" fullScreenMenu.classList.add('show');">&#9776;</div>
             </div>
         </div>
         <!-- <div></div> -->
@@ -112,11 +118,12 @@
         <div class="full-screen-menu" id="fullScreenMenu">
             <div class="header-top">
                 <div>
-                    <div>WELCOME GUEST | <a href="#">
-                            <div onclick="
-                        document.getElementById('Sign-in-box').style.display = 'block'
-                        ">SIGN IN</div>
-                        </a></div>
+                    <div class="htopic">WELCOME uname | 
+                        <a href="./pages/settings.html">
+                            <div> settings | </div>
+                        </a>
+                        <a href="#"><div> sign out</div></a>
+                    </div>
                     <img src="./pics/TNW-Logo-580x200-1.png" alt="" width="250">
                 </div>
                 <!-- <div class="close-button">X</div> -->
@@ -135,18 +142,102 @@
                     </button>
                 </div>
                 <div class="main-menu">
-                    <a href="#">Computing ></a>
-                    <a href="#">Internet ></a>
-                    <a href="#">IT ></a>
-                    <a href="#">Mobile Tech ></a>
-                    <a href="#">Reviews ></a>
-                    <a href="#">Security ></a>
-                    <a href="#">Tech Blog ></a>
-                    <a href="#">Technology ></a>
-                    <a href="#">Most Popular ></a>
-                    <a href="#">Site Map ></a>
-                    <a href="#">Newsletters ></a>
-                    <a href="#">Advertising ></a>
+                    <button class="btn">
+                        <div href="#">Computing</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button>
+                        <div href="#">Internet</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button>
+                        <div href="#">IT</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button>
+                        <div href="#">Mobile Tech</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button>
+                        <div href="#">Reviews</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button>
+                        <div href="#">Security</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button>
+                        <div href="#">Tech Blog</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button>
+                        <div href="#">Technology</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button >
+                        <div href="#">Most Popular</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button>
+                        <div href="#">Site Map</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button>
+                        <div href="#">Newsletters</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button>
+                        <div href="#">Advertising</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
                 </div>
             </div>
             <!-- <div class="menu">
@@ -176,17 +267,7 @@
         </a>
     </header>
 
-
-
-
-
-
-
-
-
-
     <!-- sign in part -->
-
     <section class="Sign-in-box" id="Sign-in-box">
         <div class="signin-container">
             <div class="close-button-menu">
@@ -206,7 +287,7 @@
 
                 <div class="submit-t">
 
-                    <button type="submit" onclick="alert('hello')">SIGN IN</button>
+                    <button type="submit" onclick="document.getElementById('Sign-in-box').style.display = 'block'" >SIGN IN</button>
                 </div>
             </form>
             <div class="links">
@@ -217,10 +298,12 @@
         </div>
     </section>
 
+
+    <!-- main part -->
     <section class="sec01" id="sec01">
         <div class="header">
             <div class="create-head">
-                <div><a href="#">TechNewsWorld </a> • </div> Top Stories
+                <div><a href="#">TechNewsWorld </a> • </div> Tech Blog
             </div>
             <div class="date" id="dateTime">January 16, 2025 08:37:11 PM</div>
         </div>
@@ -243,12 +326,12 @@
             <div class="poll-containre">
                 <h2>Do you favor a deal to keep TikTok operating in the USA?</h2>
                 <div class="poll-options">
-                    <label><input type="radio" name="poll" value="yes"> Yes</label><br>
+                    <label><input type="checkbox" name="poll" value="yes"> Yes</label><br>
                     <label><input type="radio" name="poll" value="neutral"> Neutral</label><br>
                     <label><input type="radio" name="poll" value="no"> No</label><br>
                     <label><input type="radio" name="poll" value="unsure"> Unsure</label>
                 </div>
-                <button onclick="showResults()">VOTE TO SEE RESULTS</button>
+                <button onclick="showResults()" class="btn">VOTE TO SEE RESULTS</button>
                 <div id="results" style="display:none;"></div>
             </div>
 
@@ -411,6 +494,9 @@
 
 
 
+
+
+
     <footer>
         <div>
             <div class="footer-section-container">
@@ -503,7 +589,145 @@
     </div>
 
     <script type="module" src="./script/blog.js"></script>
-    <script src="./script/header.js"></script>
+    <script type="module" src="./script/header.js"></script>
+    <script type="module">
+        // // Import the functions you need from the SDKs you need
+        // import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+        // import { getFirestore, collection, getDoc, doc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+        // import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+        // // TODO: Add SDKs for Firebase products that you want to use
+        // // https://firebase.google.com/docs/web/setup#available-libraries
+
+        // // Your web app's Firebase configuration
+        // const firebaseConfig = {
+        //     apiKey: "AIzaSyAzAgywPLaEHtnSOzocjKuVFPetlkLCZq8",
+        //     authDomain: "instablog-b09e0.firebaseapp.com",
+        //     projectId: "instablog-b09e0",
+        //     storageBucket: "instablog-b09e0.firebasestorage.app",
+        //     messagingSenderId: "74456260023",
+        //     appId: "1:74456260023:web:4863b97a085c0396639c32"
+        // };
+
+        // // Initialize Firebase
+        // const app = initializeApp(firebaseConfig);
+        // // Initialize Auth
+        // const auth = getAuth()
+        // // Initialize Firestor
+        // const db = getFirestore(app)
+        // // Collection Refernce(s)
+        // const userColRef = collection(db, "createUser")
+
+        // onAuthStateChanged(auth, async (user) => {
+        //     if (user) {
+        //         try {
+        //             console.log(user);
+
+        //             const id = user.uid;
+        //             const docSnap = await getDoc(doc(userColRef, id));
+        //             console.log(docSnap.data());
+                    
+        //             // const { email, fullName } = docSnap.data();
+        //             // document.querySelector(".card-title").textContent = fullName
+        //             // document.querySelector(".card-text").textContent = `Email: ${email}`;
+        //             // profileCard.classList.remove("d-none")
+        //         } catch (error) {
+        //             console.log(error);
+        //         }
+        //         // finally {
+        //         //     spinner.classList.add("d-none")
+        //         // }
+        //     } else {
+        //         console.log('no user');
+                
+        //         // window.location.replace("./pages/createAccount.html")
+        //     }
+        // })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js"; // Use latest version
+        import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+
+        // ... (Firebase config as before)
+
+        const auth = getAuth();
+        const db = getFirestore(app); // Initialize Firestore with the app
+        const welcomeMessage = document.getElementById('welcomeMessage');
+        const mobileWelcomeMessage = document.getElementById('mobileWelcomeMessage');
+        const signOutButton = document.getElementById('signOutButton');
+        const signInForm = document.getElementById('signInForm'); // Get the sign-in form
+
+        onAuthStateChanged(auth, async (user) => {
+            if (user) {
+                const displayName = user.uName || user.email;
+
+                try {
+                    const userDocRef = doc(db, "createUser", user.uid);
+                    const userDocSnapshot = await getDoc(userDocRef);
+
+                    if (userDocSnapshot.exists()) {
+                        const userData = userDocSnapshot.data();
+                        welcomeMessage.textContent = `Welcome, ${userData.username}!`;
+                        mobileWelcomeMessage.textContent = `Welcome, ${userData.username}!`;
+                    } else {
+                        welcomeMessage.textContent = `Welcome, ${displayName}!`;
+                        mobileWelcomeMessage.textContent = `Welcome, ${displayName}!`;
+                        console.log("User document not found in Firestore.");
+                    }
+                } catch (error) {
+                    console.error("Error getting user document from Firestore:", error);
+                    welcomeMessage.textContent = `Welcome, ${displayName}!`;
+                    mobileWelcomeMessage.textContent = `Welcome, ${displayName}!`;
+                }
+
+                signOutButton.style.display = 'block';
+            } else {
+                welcomeMessage.textContent = "Welcome, Guest!";
+                mobileWelcomeMessage.textContent = "Welcome, Guest!";
+                signOutButton.style.display = 'none';
+            }
+        });
+
+        if (signOutButton) {
+            signOutButton.addEventListener('click', async () => {
+                try {
+                    await signOut(auth);
+                    console.log("User signed out successfully.");
+                } catch (error) {
+                    console.error("Error signing out:", error);
+                    alert("An error occurred during sign out.");
+                }
+            });
+        }
+        if (signInForm) {
+          signInForm.addEventListener('submit', (event) => {
+            event.preventDefault(); // Prevent form from actually submitting
+            // Handle sign-in logic here (using Firebase signInWithEmailAndPassword, etc.)
+            alert("Sign-in functionality to be implemented here.");
+          });
+        }
+    </script>
 </body>
 
 </html>
+
+
+
+
+

@@ -36,7 +36,7 @@ const fullScreenMenu = document.getElementById('fullScreenMenu');
 const closeMenu = document.getElementById('closeMenu');
 
 menuIcon.addEventListener('click', () => {
-    alert('hello')
+    // alert('hello')
     fullScreenMenu.classList.add('show');
 });
 

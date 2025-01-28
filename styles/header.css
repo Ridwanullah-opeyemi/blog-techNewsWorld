@@ -4,10 +4,13 @@
     padding: 0;
     font-family: sans-serif;
 }
-
+.header-top .htopic{
+    display: flex;
+    margin-left: 3px;
+}
 
 /* button */
-/* .btn {
+ .btn {
     background-color: #dd171f;
     color: white;
     border: none;
@@ -23,7 +26,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.637);
+    background-color:  #dd171f;
     transition: bottom 0.3s ease;
     color: #ffffff;
 }
@@ -34,8 +37,8 @@
 
 .btn:active {
     transform: translateY(1px);
-}
- */
+} 
+
 
 
 
@@ -287,7 +290,7 @@ hr{
 }
 
 .header-top {
-    border: solid;
+    /* border: solid; */
     margin-inline: auto;
     padding: 15px 20px;
     width: 90%;
@@ -306,10 +309,10 @@ hr{
     font-size: 20px;
 }
 
-.header-main {
+.header-main1 {
     width: 15%;
     padding: 0 20px;
-    border: solid;
+    /* border: solid; */
     border-right: 1px solid #ccc;
     margin-left: 5%;
 }
@@ -333,10 +336,10 @@ hr{
     border-top: 1px solid gray;
     border-bottom: 1px solid gray;
     border-left: none;
-    border-left: none;
     border-radius: 0 5px 5px 0;
     background-color: white;
     cursor: pointer;
+    color: #000000;
 }
 
 .main-menu {
@@ -490,6 +493,10 @@ button {
         width: 85%;
         margin-inline: auto;
     }
+    .sec01 {
+        width: 95%;
+        /* border: solid;///////// */
+    }
 }
 @media(max-width: 990px)  {
     .hdr-top .container {
@@ -516,6 +523,58 @@ button {
     .hdr-bttm{
         width: 90%;
         margin-inline: auto;
+    }
+    .close-menu{
+        font-size: 20px;
+        margin-top: -25px;
+    }
+    .header-main1{
+        width: 95%;
+        /* margin-left: none; */
+        padding-left: 0;
+        /* margin-inline: auto; */
+        /* border: solid green; */
+    }
+    .full-screen-menu{
+        /* border: solid red; */
+        width: 100%;
+    }
+    .main-menu button{
+        display: flex;
+        width: 100%;
+        justify-content: space-between;
+        background-color: #ffffff;
+        color: #323232;
+        font-size: 15px;
+        padding: none;
+    }
+    .main-menu,.search-bar{
+        width: 100%;
+        /* border: solid hotpink; */
+        margin: 0;
+        padding: 0;
+    }
+    .search-bar{
+        width: 100%;
+        border: solid;
+    }
+    .search-bar input{
+        width: 80%;
+        border: none;    
+        padding: 10px;
+        padding-top: 20px;
+    }
+    .search-bar button{
+        width: 20%;
+        cursor: pointer;
+        padding: 5px 10px;
+    }
+    .search-bar .main-menu button:hover{
+        /* cursor: pointer; */
+        background-color: #d63137;
+    }
+    .sec01 .date{
+        display: none;
     }
 
 }
@@ -555,7 +614,7 @@ button {
         display: flex;
         flex-direction: column;
         width: 100%;
-        border: solid;
+        /* border: solid; */
         padding: 0%;
         align-items: self-start;
     }
