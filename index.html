@@ -6,7 +6,7 @@
     <title>Tech Blog | TechNewsWorld</title>
 
     <link rel="stylesheet" href="./styles/blog.css">
-    <!-- <link rel="stylesheet" href="./styles/header.css"> -->
+    <link rel="stylesheet" href="./styles/header.css">
     <link rel="stylesheet" href="./styles/footer.css">
     <style>
 
@@ -46,7 +46,7 @@
                 </div>
                 <div class="hdr-bttm">
                     <div class="f-hdr-bttm">
-                        <img src="./pics/TNW-Logo-580x200-1.png" alt="" width="200">
+                        <img src="../pics/TNW-Logo-580x200-1.png" alt="" width="200">
                     </div>
                     <div class="menu-icon2" id="menuIcon">&#9776;</div>
                     <div class="s-hdr-bttm">
@@ -67,7 +67,7 @@
                         </div>
                         <div class="hdr-ss" id="headHide">
                             <div class="srch-hid">
-                                <h1>FRONT PAGE</h1>
+                                <h1>RESET PASSWORD</h1>
                                 <div class="search-con">
                                     <div class="search-container2">
                                         <input type="text" class="search-input2" placeholder="SEARCH">
@@ -79,7 +79,8 @@
                                             </svg>
                                         </span>
                                     </div>
-                                    <div class="menu-icon" id="menuIcon">&#9776;</div>
+                                    <div class="menu-icon" id="menuIcon"
+                                    onclick=" fullScreenMenu.classList.add('show');">&#9776;</div>
                                 </div>
                             </div>
                         </div>
@@ -90,7 +91,7 @@
         </div>
 
         <div class="srch-sec" id="header2">
-            <h1>FRONT PAGE</h1>
+            <h1>RESET PASSWORD</h1>
             <div class="search-con">
                 <div class="search-container">
                     <input type="text" class="search-input" placeholder="SEARCH">
@@ -102,7 +103,7 @@
                         </svg>
                     </span>
                 </div>
-                <div class="menu-icon" id="menuIcon">&#9776;</div>
+                <div class="menu-icon" id="menuIcon" onclick=" fullScreenMenu.classList.add('show');">&#9776;</div>
             </div>
         </div>
         <!-- <div></div> -->
@@ -112,18 +113,19 @@
         <div class="full-screen-menu" id="fullScreenMenu">
             <div class="header-top">
                 <div>
-                    <div>WELCOME GUEST | <a href="#">
-                            <div onclick="
-                        document.getElementById('Sign-in-box').style.display = 'block'
-                        ">SIGN IN</div>
-                        </a></div>
-                    <img src="./pics/TNW-Logo-580x200-1.png" alt="" width="250">
+                    <div class="htopic">WELCOME uname | 
+                        <a href="../pages/settings.html">
+                            <div> settings | </div>
+                        </a>
+                        <a href="#"><div> sign out</div></a>
+                    </div>
+                    <img src="../pics/TNW-Logo-580x200-1.png" alt="" width="250">
                 </div>
                 <!-- <div class="close-button">X</div> -->
-                <div class="close-menu" id="closeMenu">x</div>
+                <div class="close-menu" id="closeMenu" >x</div>
             </div>
 
-            <div class="header-main">
+            <div class="header-main1">
                 <div class="search-bar">
                     <input type="text" placeholder="SEARCH">
                     <button>
@@ -135,18 +137,102 @@
                     </button>
                 </div>
                 <div class="main-menu">
-                    <a href="#">Computing ></a>
-                    <a href="#">Internet ></a>
-                    <a href="#">IT ></a>
-                    <a href="#">Mobile Tech ></a>
-                    <a href="#">Reviews ></a>
-                    <a href="#">Security ></a>
-                    <a href="#">Tech Blog ></a>
-                    <a href="#">Technology ></a>
-                    <a href="#">Most Popular ></a>
-                    <a href="#">Site Map ></a>
-                    <a href="#">Newsletters ></a>
-                    <a href="#">Advertising ></a>
+                    <button class="btn">
+                        <div href="#">Computing</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button class="btn">
+                        <div href="#">Internet</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button class="btn">
+                        <div href="#">IT</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button class="btn">
+                        <div href="#">Mobile Tech</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button class="btn">
+                        <div href="#">Reviews</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button class="btn">
+                        <div href="#">Security</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button class="btn">
+                        <div href="#">Tech Blog</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button class="btn">
+                        <div href="#">Technology</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button class="btn">
+                        <div href="#">Most Popular</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button class="btn">
+                        <div href="#">Site Map</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button class="btn">
+                        <div href="#">Newsletters</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
+                    <button class="btn">
+                        <div href="#">Advertising</div>
+                        <div>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chevron-compact-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M6.776 1.553a.5.5 0 0 1 .671.223l3 6a.5.5 0 0 1 0 .448l-3 6a.5.5 0 1 1-.894-.448L9.44 8 6.553 2.224a.5.5 0 0 1 .223-.671"/>
+                            </svg>
+                        </div>
+                    </button>
                 </div>
             </div>
             <!-- <div class="menu">
@@ -175,7 +261,6 @@
             </div>
         </a>
     </header>
-
 
 
 
