@@ -113,19 +113,25 @@
     color: #333;
 }
 
-.poll {
-    width: 15%;
-}
 
 .poll-options {
     margin-bottom: 10px;
 }
 
 .poll-containre {
-    width: 20%;
+    width: 24%;
+}
+.poll-containre input{
+    margin-bottom: 25px;
+}
+.poll-containre label{
+    font-size: large;
+}
+.poll-containre h2{
+    margin-bottom: 30px;
 }
 
-button {
+.poll-containre button {
     background-color: #f00;
     color: white;
     padding: 8px 15px;
@@ -152,7 +158,7 @@ button {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.637);
+    background-color: #000000d2;
     /* Semi-transparent overlay */
     transition: bottom 0.3s ease;
     /* Smooth slide-in */
@@ -477,14 +483,6 @@ p {
     margin-bottom: 20px;
 }
 
-input {
-    width: calc(100% - 12px);
-    padding: 12px;
-    border: 1px solid #ccc;
-    /* border-radius: 4 px; */
-    box-sizing: border-box;
-    margin-bottom: 20px;
-}
 
 .submit-t {
     border: none;
@@ -525,6 +523,7 @@ button {
 .links a:hover {
     text-decoration: underline;
 }
+
 
 
 

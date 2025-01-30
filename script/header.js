@@ -36,7 +36,6 @@ const fullScreenMenu = document.getElementById('fullScreenMenu');
 const closeMenu = document.getElementById('closeMenu');
 
 menuIcon.addEventListener('click', () => {
-    // alert('hello')
     fullScreenMenu.classList.add('show');
 });
 
@@ -97,16 +96,135 @@ formatDateTime(); // Call once to set initial value
 
 
 
-
 // sign in part
-signInForm.addEventListener("submit", signInUser)
-async function signInUser(e) {
-    e.preventDefault()
-    let { username, password } = signInForm;
-    let uInfo = {
-        name: username.value,
-        password: password.value
-    }
-    console.log(uInfo);
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
+import { getFirestore, collection, doc, setDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
+// Your web app's Firebase configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyB6J3iRzEyStm2TYk2LbluclZZdjx5wrzU", // Replace with your actual API key
+    authDomain: "blog-d0b19.firebaseapp.com",
+    projectId: "blog-d0b19",
+    storageBucket: "blog-d0b19.firebasestorage.app",
+    messagingSenderId: "223199572346",
+    appId: "1:223199572346:web:d0bc53967660154f0026c3"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+// Initialize Firestore
+const db = getFirestore(app);
+// Initialize auth
+const auth = getAuth();
+//collection reference
+const colRef = collection(db, "createUser");
+
+signInForm.addEventListener("submit", signInUser);
+
+async function signInUser(e) {
+    e.preventDefault();
+    let { email, password } = signInForm; // Use email and password fields, not username
+    
+
+    try {
+        const userCredential = await signInWithEmailAndPassword(auth, email.value, password.value);
+        const user = userCredential.user;
+
+        // You can now use the user object, e.g., get the UID
+        console.log("User signed in:", user.uid);
+
+        // Redirect or perform other actions after successful sign-in
+        window.location.href = "./blog.html";
+        console.log(window.location.href);
+        
+        alert("Sign in successful!");
+
+    } catch (error) {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        console.error("Sign in error:", errorCode, errorMessage);
+        alert("Sign in failed: " + errorMessage); // Display error message to the user
+    }
 }
+
+// submenu part 
+// const onComputing = document.getElementById('onComputing');
+// const ComputingOver = document.getElementById('ComputingOver');
+// const InternetOver = document.getElementById('InternetOver');
+// const InAdvertising = document.getElementById('InAdvertising');
+// const SiteMapOver = document.getElementById('SiteMapOver');
+// const NewslettersOver = document.getElementById('NewslettersOver');
+// const TechnologyOver = document.getElementById('TechnologyOver');
+// const MostPopularOver = document.getElementById('MostPopularOver');
+// const TechBlogOver = document.getElementById('TechBlogOver');
+// const SecurityOver = document.getElementById('SecurityOver');
+// const ReviewsOver = document.getElementById('ReviewsOver');
+// const ITOver = document.getElementById('ITOver');
+// const MobileOver = document.getElementById('MobileOver');
+// const onInternet = document.getElementById('onInternet');
+// const onIT = document.getElementById('onIT');
+// const onMobile = document.getElementById('onMobile');
+// const onReviews = document.getElementById('onReviews');
+// const onSecurity = document.getElementById('onSecurity');
+// const onTechBlog = document.getElementById('onTechBlog');
+// const onTechnology = document.getElementById('onTechnology');
+// const onMostPopular = document.getElementById('onMostPopular');
+// const onSiteMap = document.getElementById('onSiteMap');
+// const onNewsletters = document.getElementById('onNewsletters');
+// const onAdvertising = document.getElementById('onAdvertising');
+
+
+
+// onComputing.addEventListener('mouseover', () => {
+//     ComputingOver.style.display = 'block';
+// });
+// onInternet.addEventListener('mouseover', () => {
+//     InternetOver.style.display = 'block';
+// })
+// onIT.addEventListener('mouseover', () => {
+//     ITOver.style.display = 'block';
+// })
+// onMobile.addEventListener('mouseover', () => {
+//     MobileOver.style.display = 'block';
+// })
+// onReviews.addEventListener('mouseover', () => {
+//     ReviewsOver.style.display = 'block';
+// })
+// onSecurity.addEventListener('mouseover', () => {
+//     SecurityOver.style.display = 'block';
+// })
+// onTechBlog.addEventListener('mouseover', () => {
+//     TechBlogOver.style.display = 'block';
+// })
+// onTechnology.addEventListener('mouseover', () => {
+//     TechnologyOver.style.display = 'block';
+// })
+// onMostPopular.addEventListener('mouseover', () => {
+//     MostPopularOver.style.display = 'block';
+// })
+// onNewsletters.addEventListener('mouseover', () => {
+//     NewslettersOver.style.display = 'block';
+// })
+// onAdvertising.addEventListener('mouseover', () => {
+//     AdvertisingOver.style.display = 'block';
+// })
+// onSiteMap.addEventListener('mouseover', () => {
+//     SiteMapOver.style.display = 'block';
+// })
+
+
+
+
+
+
+
+
+
+// onInternet.addEventListener('mouseout', () => {
+//     InternetOver.style.display = 'none  ';
+// })
+// onComputing.addEventListener('mouseout', () => {
+//     ComputingOver.style.display = 'none';
+// });
