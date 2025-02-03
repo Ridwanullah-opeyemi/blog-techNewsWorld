@@ -5,6 +5,350 @@
     <title>Document</title>
 </head>
 <body>
+
     
+    
+    
+    
+    .includes {
+        margin-bottom: 20px;
+    }
+    
+    .includes li {
+        margin-bottom: 5px;
+        list-style-type: none;
+    }
+    
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+  
+    
+    
+    /* hearder part */
+    header {
+        color: #323232;
+    }
+    
+    .nav01 {
+        background-color: #000;
+        text-align: center;
+        padding: 15px 0px;
+        font-size: 14px;
+    }
+    
+    .nav01 a {
+        text-decoration: none;
+        color: #ffff;
+    }
+    
+    .nav01 a:hover{
+        text-decoration: underline;
+    }
+    
+    .hdr-top .container {
+        display: flex;
+        justify-content: space-between;
+        width: 80%;
+        margin-inline: auto;
+        align-items: center;
+        padding: 20px 0;
+        font-size: 15px;
+    }
+    
+    .hdr-top .container .f-ul {
+        display: flex;
+        width: 20%;
+        gap: 5px;
+        list-style: none;
+    }
+    
+    .hdr-top .container .f-ul .sign-in a:hover{
+        text-decoration: underline;
+    }
+    
+    .hdr-top .container .f-ul li a {
+        text-decoration: none;
+        color: #dd171f;
+    }
+    
+    .hdr-top .container .s-ul {
+        display: flex;
+        width: 55%;
+        gap: 5px;
+        justify-content: space-between;
+        list-style: none;
+    }
+    
+    .hdr-top .container .s-ul li a {
+        text-decoration: none;
+        color: #dd171f;
+    }
+    
+    .hdr-top .container .s-ul li a:hover{
+        text-decoration: underline;
+    }
+    
+    .hdr-bttm {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 80%;
+        margin-inline: auto;
+        padding: 10px 5px;
+    }
+    
+    .f-hdr-bttm {
+        width: 25%;
+    }
+    
+    .s-hdr-bttm {
+        width: 75%;
+    }
+    
+    .s-hdr-bttm ul {
+        display: flex;
+        list-style: none;
+        justify-content: space-around;
+    }
+    
+    .s-hdr-bttm ul a {
+        color: #323232;
+        text-decoration: none;
+        font-size: 14PX;
+    }
+    
+    .s-hdr-bttm ul a:hover {
+        color: #dd171f;
+        text-decoration: underline;
+    }
+    
+    .srch-sec {
+        background-color: #eee;
+        display: flex;
+        padding: 0 10%;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .search-con {
+        display: flex;
+        gap: 15px;
+    }
+    
+    .srch-sec .search-container {
+        display: flex;
+        align-items: center;
+        background-color: white;
+        border: 1px solid #ddd;
+        height: 40px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+    
+    .srch-sec .search-input {
+        border: none;
+        outline: none;
+        margin-top: 15px;
+        height: 35px;
+        flex-grow: 1;
+    }
+    
+    .srch-sec .search-icon {
+        color: #ccc;
+        font-size: 20px;
+        cursor: pointer;
+        padding: 0 5px;
+    }
+    
+    
+    /* menu part */
+    .menu-icon {
+        color: #dd171f;
+        font-size: 1.2em;
+        margin-top: 13px;
+    }
+    
+    .full-screen-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: #ffffff;
+        display: none;
+    }
+    
+    .full-screen-menu.show {
+        display: block;
+    }
+    
+    .close-menu {
+        font-size: 4em;
+        color: #dd171f;
+    }
+    
+    .header-top {
+        border: solid;
+        margin-inline: auto;
+        padding: 15px 20px;
+        width: 90%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    
+    .header-top a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    .close-button {
+        cursor: pointer;
+        font-size: 20px;
+    }
+    
+    .header-main {
+        width: 15%;
+        padding: 0 20px;
+        border: solid;
+        border-right: 1px solid #ccc;
+        margin-left: 5%;
+    }
+    
+    .search-bar {
+        width: 100%;
+        margin-bottom: 20px;
+        display: flex;
+    }
+    
+    .search-bar input {
+        flex-grow: 1;
+        padding: 10px;
+        border: 1px solid gray;
+        outline: none;
+    }
+    
+    .search-bar button {
+        padding: 8px 10px;
+        border-right: 1px solid gray;
+        border-top: 1px solid gray;
+        border-bottom: 1px solid gray;
+        border-left: none;
+        border-left: none;
+        border-radius: 0 5px 5px 0;
+        background-color: white;
+        cursor: pointer;
+    }
+    
+    .main-menu {
+        width: 200px;
+        padding-right: 20px;
+    }
+    
+    .main-menu a {
+        display: block;
+        padding: 8px 0;
+        text-decoration: none;
+        color: #333;
+    }
+    
+    .main-menu a:hover {
+        background-color: #f0f0f0;
+    }
+    
+    .submenu {
+        padding-left: 20px;
+    }
+    
+    .submenu a {
+        display: block;
+        padding: 5px 0;
+        text-decoration: none;
+        color: #333;
+    }
+    
+    .see-all {
+        text-align: right;
+        font-size: smaller;
+    }
+    
+    .see-all a {
+        text-decoration: none;
+        color: black;
+    }
+    
+    select {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        appearance: none;
+        background: url("data:image/svg+xml;utf8,<svg fill='black' height='24' viewBox='0 0 24 24' width='24' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/><path d='M0 0h24v24H0z' fill='none'/></svg>") no-repeat right 10px center;
+        padding-right: 30px;
+    }
+    
+    .email-info {
+        margin-bottom: 15px;
+        font-size: 15px;
+    }
+    
+    .email-info p a {
+        color: #f9030b;
+        text-decoration: none;
+    }
+    
+    .email-info p a:hover {
+        color: #ff0008;
+        text-decoration: underline;
+    }
+    
+    .recaptcha {
+        margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .recaptcha>div {
+        margin-left: 10px;
+    }
+    
+    form {
+        width: 65%;
+    }
+    
+    button {
+        background-color: #d11f26;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        width: 100%;
+        font-weight: bold;
+        font-size: larger;
+    }
+    
+    .g-recaptcha {
+        margin-bottom: 15px;
+    }
+    
+    .asterisk {
+        color: #000000;
+    }
+    
+    .header {
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 50px;
+    }
+    
+    .date {
+        font-size: small;
+    }
 </body>
 </html>

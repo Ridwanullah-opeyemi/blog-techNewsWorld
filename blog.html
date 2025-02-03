@@ -28,25 +28,25 @@
                 <div class="hdr-top for-desk">
                     <div class="container">
                         <ul class="f-ul">
-                            <li>WELCOME <div id="uName">NAME</div>
+                            <li class="lName"><strong>WELCOME</strong> <strong id="dlsName1"></strong>
                             </li>
                             <li>
                                 <a>
-                                    <div><a href="./pages/settings.html">| SETTINGS</a></div>
+                                    <strong><a href="./pages/settings.html">| SETTINGS</a></strong>
                                 </a>
                             </li>
                             <li>
                                 <a>
-                                    <div id="signOutUserAccount">| SIGN OUT</div>
+                                    <strong id="signOutUserAccount">| SIGN OUT</strong>
                                 </a>
                             </li>
                         </ul>
                         <ul class="s-ul">
-                            <li><a href="#">E-COMMERCE TIMES |</a></li>
-                            <li><a href="#">CRM BUYER |</a></li>
-                            <li><a href="#">LINUXINSIDER |</a></li>
-                            <li><a href="#">ECTNEWS.COM |</a></li>
-                            <li><a href="#">ADVERTISING</a></li>
+                            <li><a href="#"><strong> E-COMMERCE TIMES |</strong></a></li>
+                            <li><a href="#"><strong>CRM BUYER |</strong></a></li>
+                            <li><a href="#"><strong>LINUXINSIDER |</strong></a></li>
+                            <li><a href="#"><strong>ECTNEWS.COM |</strong></a></li>
+                            <li><a href="#"><strong>ADVERTISING</strong></a></li>
                         </ul>
                     </div>
                 </div>
@@ -73,7 +73,7 @@
                         </div>
                         <div class="hdr-ss" id="headHide">
                             <div class="srch-hid">
-                                <h1>RESET PASSWORD</h1>
+                                <h1>FRONT PAGE</h1>
                                 <div class="search-con">
                                     <div class="search-container2">
                                         <input type="text" class="search-input2" placeholder="SEARCH">
@@ -97,7 +97,7 @@
         </div>
 
         <div class="srch-sec" id="header2">
-            <h1>RESET PASSWORD</h1>
+            <h1>Front Page</h1>
             <div class="search-con">
                 <div class="search-container">
                     <input type="text" class="search-input" placeholder="SEARCH">
@@ -118,15 +118,22 @@
 
         <div class="full-screen-menu" id="fullScreenMenu">
             <div class="header-top">
-                <div>
-                    <div class="htopic">WELCOME uname |
-                        <a href="../pages/settings.html">
-                            <div> settings | </div>
-                        </a>
-                        <a href="#">
-                            <div> sign out</div>
-                        </a>
-                    </div>
+                <div class="tText">
+                    <ul>
+                        <li class="lName">WELCOME <strong id="dlsName2"></strong>
+                        </li>
+                        <li>
+                            <a href="../pages/settings.html">
+                                | SETTINGS
+                            </a>
+                        </li>
+                        <li>
+                            <a>
+                                <strong id="signOutUserAccount2"> | SIGN OUT</strong>
+                            </a>
+                        </li>
+                    </ul>
+
                     <img src="../pics/TNW-Logo-580x200-1.png" alt="" width="250">
                 </div>
                 <!-- <div class="close-button">X</div> -->
@@ -329,7 +336,7 @@
     <section class="sec01" id="sec01">
         <div class="header">
             <div class="create-head">
-                <div><a href="#">TechNewsWorld </a> • </div> Tech Blog
+                <div><a href="#">TechNewsWorld </a> • </div> Front Page
             </div>
             <div class="date" id="dateTime">January 16, 2025 08:37:11 PM</div>
         </div>
@@ -615,89 +622,8 @@
     </div>
 
     <script type="module" src="./script/blog.js"></script>
-    <script type="module" src="./script/header.js"></script>
-    <script type="module">
-        // Import the functions you need from the SDKs you need
-        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-        import { getFirestore, collection, getDoc, doc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
-        import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
-        // TODO: Add SDKs for Firebase products that you want to use
-        // https://firebase.google.com/docs/web/setup#available-libraries
+    <script src="./script/header.js"></script>
 
-        // Your web app's Firebase configuration
-        const firebaseConfig = {
-            apiKey: "AIzaSyB6J3iRzEyStm2TYk2LbluclZZdjx5wrzU", // Replace with your actual API key
-            authDomain: "blog-d0b19.firebaseapp.com",
-            projectId: "blog-d0b19",
-            storageBucket: "blog-d0b19.firebasestorage.app",
-            messagingSenderId: "223199572346",
-            appId: "1:223199572346:web:d0bc53967660154f0026c3"
-        };
-
-        // Initialize Firebase
-        const app = initializeApp(firebaseConfig);
-        // Initialize Auth
-        const auth = getAuth()
-        // Initialize Firestor
-        const db = getFirestore(app)
-        // Collection Refernce(s)
-        const userColRef = collection(db, "createUser")
-
-        onAuthStateChanged(auth, async (user) => {
-            if (user) {
-                try {
-                    console.log(user);
-                    const id = user.uid;
-                    const docSnap = await getDoc(doc(userColRef, id));
-                    console.log(docSnap.data());
-                    uName.innerHTML = docSnap.data().uname
-
-                    // const { email, fullName } = docSnap.data();
-                    // document.querySelector(".card-title").textContent = fullName
-                    // document.querySelector(".card-text").textContent = `Email: ${email}`;
-                    // profileCard.classList.remove("d-none")
-                } catch (error) {
-                    console.log(error);
-                }
-                // finally {
-                //     spinner.classList.add("d-none")
-                // }
-            } else {
-                console.log('no user');
-
-                // window.location.replace("./pages/createAccount.html")
-            }
-        })
-
-
-
-        signOutUserAccount.addEventListener("click", signOutUser)
-
-        async function signOutUser() {
-            try {
-                await signOut(auth);  // Attempt to sign out the user from Firebase authentication
-                alert("Sign out successful"); // Show a success message when sign-out is successful
-                window.location.href = "./index.html"
-            } catch (error) {
-                console.log(error); // Log any errors that occur during sign-out
-            }
-        }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    </script>
 </body>
 
 </html>

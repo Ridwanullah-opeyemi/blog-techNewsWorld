@@ -7,6 +7,8 @@
 }
 
 
+
+
 /* main part */
 .sec01 {
     /* border: solid; */
@@ -207,7 +209,7 @@
 }
 
 .news-card:hover {
-    background-color: #f1f1f1;
+    background-color: #ffffffbb;
     box-shadow: 0 3px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -312,7 +314,7 @@
 }
 
 .carousel-control:hover {
-    background-color: #f3ebebcc;
+    background-color: #f7f2f2;
 }
 
 .carousel-control:disabled {
@@ -365,17 +367,23 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 20px;
+    background-color: #f7f7f7;
 }
 
 .sec04 .general-con .news-container .news-grid .news-item {
-    border: 1px solid #ddd;
+    border: none;
+    /* border: 1px solid #ddd; */
     padding: 10px;
     border-radius: 5px;
+    background-color: #f7f7f7;
+    background-color: transparent;
+    display: flex; 
+    flex-direction: row ; 
+    align-items: stretch; 
+}
+.sec04 .general-con .news-container .news-grid .news-item:hover{
+    background-color: #fafafa;
     box-shadow: 2px 2px 5px rgba(0,0,0,0.1);
-    background-color: white;
-    display: flex; /* Use flexbox */
-    flex-direction: row ; /* Stack items horisontal */
-    align-items: stretch; /* Stretch items to fill container width */
 }
 
 .sec04 .general-con .news-container .news-grid .news-item .grid-image {
@@ -741,9 +749,9 @@ button {
         width: 100%;
         object-fit: cover; /* Prevent distortion */
     }
-    .sec01 .date{
+    /* .sec01 .date{
         display: none;
-    }
+    } */
     .card-btn{
         left: 85;
     }

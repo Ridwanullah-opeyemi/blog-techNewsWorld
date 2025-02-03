@@ -1,78 +1,3 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-import { getFirestore, collection, getDoc, doc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyB6J3iRzEyStm2TYk2LbluclZZdjx5wrzU", // Replace with your actual API key
-    authDomain: "blog-d0b19.firebaseapp.com",
-    projectId: "blog-d0b19",
-    storageBucket: "blog-d0b19.firebasestorage.app",
-    messagingSenderId: "223199572346",
-    appId: "1:223199572346:web:d0bc53967660154f0026c3"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-// Initialize Auth
-const auth = getAuth()
-// Initialize Firestor
-const db = getFirestore(app)
-// Collection Refernce(s)
-const userColRef = collection(db, "createUser")
-
-onAuthStateChanged(auth, async (user) => {
-    if (user) {
-        try {
-            console.log(user);
-            const id = user.uid;
-            const docSnap = await getDoc(doc(userColRef, id));
-            console.log(docSnap.data());
-            let userName = docSnap.data().uname.toUpperCase()
-            dlsName1.innerHTML = userName
-            dlsName2.innerHTML = userName
-
-            console.log(userName);
-
-            // const { email, fullName } = docSnap.data();
-            // document.querySelector(".card-title").textContent = fullName
-            // document.querySelector(".card-text").textContent = `Email: ${email}`;
-            // profileCard.classList.remove("d-none")
-        } catch (error) {
-            console.log(error);
-        }
-        // finally {
-        //     spinner.classList.add("d-none")
-        // }
-    } else {
-        console.log('no user');
-
-        // window.location.replace("./pages/createAccount.html")
-    }
-})
-
-
-let signOutUserAccount = document.getElementById('signOutUserAccount')
-let signOutUserAccount2 = document.getElementById('signOutUserAccount2')
-signOutUserAccount.addEventListener("click", signOutUser)
-signOutUserAccount2.addEventListener("click", signOutUser)
-
-async function signOutUser() {
-    try {
-        await signOut(auth);  // Attempt to sign out the user from Firebase authentication
-        alert("Sign out successful"); // Show a success message when sign-out is successful
-        window.location.href = "./index.html"
-    } catch (error) {
-        console.log(error); // Log any errors that occur during sign-out
-    }
-}
-
-
-
-
 //  card display
 let cardArray = [
     {
@@ -301,5 +226,4 @@ setTimeout(() => {
     startCarousel();
     updateCarousel();
 }, 100); // Delay to allow DOM updates
-
 

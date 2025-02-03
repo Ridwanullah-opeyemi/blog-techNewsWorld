@@ -172,3 +172,23 @@ button {
 .date {
     font-size: small;
 }
+
+
+
+
+
+
+
+
+@media(max-width: 990px)  {
+    .create-section{
+        width: 100%;
+        padding: 10px;
+    }
+    form {
+        width: 100%;
+    }
+    input, select{
+        margin-bottom: 25px;
+    }
+}

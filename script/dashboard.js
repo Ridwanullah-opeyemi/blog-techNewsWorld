@@ -1,129 +1,54 @@
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
-import { getFirestore, collection, getDoc, doc } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
-import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
-
-// Your web app's Firebase configuration
-const firebaseConfig = {
-    apiKey: "AIzaSyB6J3iRzEyStm2TYk2LbluclZZdjx5wrzU", // Replace with your actual API key
-    authDomain: "blog-d0b19.firebaseapp.com",
-    projectId: "blog-d0b19",
-    storageBucket: "blog-d0b19.firebasestorage.app",
-    messagingSenderId: "223199572346",
-    appId: "1:223199572346:web:d0bc53967660154f0026c3"
-};
-
-// Initialize Firebase
-const app = initializeApp(firebaseConfig);
-// Initialize Auth
-const auth = getAuth()
-// Initialize Firestor
-const db = getFirestore(app)
-// Collection Refernce(s)
-const userColRef = collection(db, "createUser")
-
-onAuthStateChanged(auth, async (user) => {
-    if (user) {
-        try {
-            console.log(user);
-            const id = user.uid;
-            const docSnap = await getDoc(doc(userColRef, id));
-            console.log(docSnap.data());
-            let userName = docSnap.data().uname.toUpperCase()
-            dlsName1.innerHTML = userName
-            dlsName2.innerHTML = userName
-
-            console.log(userName);
-
-            // const { email, fullName } = docSnap.data();
-            // document.querySelector(".card-title").textContent = fullName
-            // document.querySelector(".card-text").textContent = `Email: ${email}`;
-            // profileCard.classList.remove("d-none")
-        } catch (error) {
-            console.log(error);
-        }
-        // finally {
-        //     spinner.classList.add("d-none")
-        // }
-    } else {
-        console.log('no user');
-
-        // window.location.replace("./pages/createAccount.html")
-    }
-})
-
-
-let signOutUserAccount = document.getElementById('signOutUserAccount')
-let signOutUserAccount2 = document.getElementById('signOutUserAccount2')
-signOutUserAccount.addEventListener("click", signOutUser)
-signOutUserAccount2.addEventListener("click", signOutUser)
-
-async function signOutUser() {
-    try {
-        await signOut(auth);  // Attempt to sign out the user from Firebase authentication
-        alert("Sign out successful"); // Show a success message when sign-out is successful
-        window.location.href = "./index.html"
-    } catch (error) {
-        console.log(error); // Log any errors that occur during sign-out
-    }
-}
-
-
-
-
 //  card display
 let cardArray = [
     {
-        Image: "./pics/AI-thinking.jpg",
+        Image: "../pics/AI-thinking.jpg",
         title: "AI Dominates 2025 Cybersecurity Predictions",
         text: "Experts predict new threats, expanded attack surfaces, and the critical need for secure and responsible AI adoption as it reshapes the cybersecurity landscape. This includes addressing AI-powered attacks and ensuring data privacy in AI systems."
     },
     {
-        Image: "./pics/quantum-computing-researcher.jpg",
+        Image: "../pics/quantum-computing-researcher.jpg",
         title: "Quantum Computing Remains Experimental Despite 2024 Advances: Forrester",
         text: "Quantum computing made significant strides in 2024, but it's yet to demonstrate a practical advantage over classical digital computers, according to Forrester. Challenges remain in error correction and building stable qubits."
     },
     {
-        Image: "./pics/thinker.jpg",
+        Image: "../pics/thinker.jpg",
         title: "7 Troubling Tech Trends of 2024",
         text: "From overhyped AI gimmicks to privacy erosion and unsustainable hardware practices, here are some of the worst tech trends of 2024. These trends highlight the need for greater scrutiny and responsible development in the tech industry."
     },
     {
-        Image: "./pics/smartphone-user-perplexed.jpg",
+        Image: "../pics/smartphone-user-perplexed.jpg",
         title: "Apple, Samsung Users Unimpressed by AI on Their Phones: Survey",
         text: "While artificial intelligence has energized the marketing departments of smartphone makers like Apple and Samsung, it isn't generating much enthusiasm among users, a recent survey reveals. Many find current AI features gimmicky and not essential."
     },
     {
-        Image: "./pics/best-in-tech-2024.jpg",
+        Image: "../pics/best-in-tech-2024.jpg",
         title: "Standout Tech Products of 2024",
         text: "Many amazing products launched this year, and we’ll cover some of them. One product stood out well above the res..."
     },
 
 
     {
-        Image: "./pics/intel-new-york-giants.jpg",
+        Image: "../pics/intel-new-york-giants.jpg",
         title: "Is Intel the Tech Industry Equivalent of the 2024 New York Giants?",
         text: "These two industry titans are struggling through severe scrutiny and poor performance. Both were once at the top of thei..."
     },
     {
-        Image: "./pics/quantum-computing.jpg",
+        Image: "../pics/quantum-computing.jpg",
         title: "Google’s Willow Chip Has Quantum Developers Weeping With Joy",
         text: "Willow performed a computation in under five minutes that would take one of today’s fastest supercomputers 10 septillion years -..."
     },
     {
-        Image: "./pics/job-search-smartphone.jpg",
+        Image: "../pics/job-search-smartphone.jpg",
         title: "Job Seekers Targeted by Scammers in Mobile Phishing Campaign",
         text: "The campaign discovered by Zimperium zLabs targets Android mobile phones and aims to distribute a variant of the Antidot bankin..."
     },
     {
-        Image: "./pics/holiday-gifts.jpg",
+        Image: "../pics/holiday-gifts.jpg",
         title: "5 Tech Gifts To Brighten Their Holidays",
         text: "Rob Enderle's curated list of standout tech gifts that are sure to impress includes innovative gadgets for every budget, fro..."
     },
     {
-        Image: "./pics/IT-team.jpg",
+        Image: "../pics/IT-team.jpg",
         title: "AI Dominates 2025 Cybersecurity Predictions",
         text: "Experts predict new threats, expanded attack surfaces, and the critical need for secure and responsible AI adoption as it reshapes the cybersecurity landscape. This includes addressing AI-powered attacks and ensuring data privacy in AI systems."
     },
@@ -151,18 +76,26 @@ cardArray.forEach((card) => {
 
 
 
+
+
+
+
+
+
+
+
 const newsData = {
     mainNews: {
-        image: "./pics/computer-shopping.jpg",
+        image: "../pics/computer-shopping.jpg",
         title: "Biden Bashed Over AI Diffusion Policy",
         text: "An eleventh-hour move by the Biden Administration to regulate how American AI technology is shared with the world is coming under fire from the nation's tech sector..."
     },
     sideNews: [
-        { image: "./pics/wildfire-firefighter.jpg", title: "Building Back a Better Los Angeles With Fire-Resistant Homes", text: "For decades, Los Angeles has had some of the strongest building codes for earthquakes and localized fires, but large-scale fire events are new to the region and appear to be..." },
-        { image: "./pics/holiday-gifts.jpg", title: "5 Tech Gifts To Brighten Their Holidays", text: "Rob Enderle's curated list of standout tech gifts that are sure to impress includes innovative gadgets for every budget, fro..." },
-        { image: "./pics/IT-team.jpg", title: "AI Dominates 2025 Cybersecurity Predictions", text: "Experts predict new threats, expanded attack surfaces, and the critical need for secure and responsible AI adoption as it reshapes the cybersecurity landscape. This includes addressing AI-powered attacks and ensuring data privacy in AI systems." },
-        { image: "./pics/computer-shopping.jpg", title: "Biden Bashed Over AI Diffusion Policy", text: "Move by the Biden Administration to regulate how American AI technology is shared with the world is coming under fire from the nation's tech sector..." },
-        { image: "./pics/job-search-smartphone.jpg", title: "Job Seekers Targeted by Scammers in Mobile Phishing Campaign", text: "The campaign discovered by Zimperium zLabs targets Android mobile phones and aims to distribute a variant of the Antidot bankin..." }
+        { image: "../pics/wildfire-firefighter.jpg", title: "Building Back a Better Los Angeles With Fire-Resistant Homes", text: "For decades, Los Angeles has had some of the strongest building codes for earthquakes and localized fires, but large-scale fire events are new to the region and appear to be..." },
+        { image: "../pics/holiday-gifts.jpg", title: "5 Tech Gifts To Brighten Their Holidays", text: "Rob Enderle's curated list of standout tech gifts that are sure to impress includes innovative gadgets for every budget, fro..." },
+        { image: "../pics/IT-team.jpg", title: "AI Dominates 2025 Cybersecurity Predictions", text: "Experts predict new threats, expanded attack surfaces, and the critical need for secure and responsible AI adoption as it reshapes the cybersecurity landscape. This includes addressing AI-powered attacks and ensuring data privacy in AI systems." },
+        { image: "../pics/computer-shopping.jpg", title: "Biden Bashed Over AI Diffusion Policy", text: "Move by the Biden Administration to regulate how American AI technology is shared with the world is coming under fire from the nation's tech sector..." },
+        { image: "../pics/job-search-smartphone.jpg", title: "Job Seekers Targeted by Scammers in Mobile Phishing Campaign", text: "The campaign discovered by Zimperium zLabs targets Android mobile phones and aims to distribute a variant of the Antidot bankin..." }
     ]
 };
 
@@ -230,14 +163,25 @@ updateMainNewsSequentially();
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
 //  carousel part
 const carouselInner = document.getElementById('carouselInner');
 const prevButton = document.getElementById('prevButton');
 const nextButton = document.getElementById('nextButton');
 let currentIndex = 0;
 let intervalId;
-
-
 
 
 // Dynamically add items to carousel
@@ -247,10 +191,6 @@ cardArray.forEach((carousel) => {
     <div class="carousel-item"><img src="${Image}" alt="AI"><h2>${title}</h2></div>
   `;
 });
-
-
-
-
 
 // Wait for the DOM to update before calculating item width
 setTimeout(() => {
@@ -301,5 +241,3 @@ setTimeout(() => {
     startCarousel();
     updateCarousel();
 }, 100); // Delay to allow DOM updates
-
-

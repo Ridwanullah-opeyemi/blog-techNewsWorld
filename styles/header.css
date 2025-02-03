@@ -4,7 +4,7 @@
     padding: 0;
     font-family: sans-serif;
 }
-.header-top .htopic{
+.header-top ul{
     display: flex;
     margin-left: 3px;
 }
@@ -147,7 +147,7 @@ header {
 .s-hdr-bttm ul a {
     color: #323232;
     text-decoration: none;
-    font-size: 11PX;
+    font-size: 13PX;
 }
 
 .s-hdr-bttm ul a:hover {
@@ -192,6 +192,11 @@ header {
 hr{
     margin-top: 15px;
     display: none;
+}
+
+
+.container .f-ul li a:hover{
+    text-decoration: underline;
 }
 
 
@@ -250,11 +255,36 @@ hr{
     text-align: center;
     font-size: larger;
     padding-top: 7px;
+    color: #ffffff;
 }input
 .a{
     text-decoration: none;
     color: #ffffff;
 }
+.fixed-backgrand .hdr-top .container .f-ul .lName{
+    display: flex;
+    gap: 7px;
+    color: #dd2a30;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 /* menu part */
@@ -308,20 +338,24 @@ hr{
 .header-top .greet a:hover{
     text-decoration: underline;
 }
-.htopic{
+.header-top .tText ul{
+    /* border: solid; */
     gap: 10px;
-    font-size: 18px;
+    /* font-size: 18px; */
     color: #dd171f;
     margin-bottom: 10px;
+    list-style: none;
 }
 
-.htopic a div{
+.header-top .tText ul li ,.header-top .tText ul li  a{
     color: #dd171f;
     font-size: 20px;
+    font-size: bold;
 }
 
-.htopic a div:hover{
+.header-top .tText ul li a:hover{
     text-decoration: underline;
+    color: #d63137;
 }
 
 .header-top a {
@@ -443,16 +477,14 @@ hr{
     font-size: 18px;
 }
 
-/* .main-menu a {
-    display: block;
-    padding: 8px 0;
-    text-decoration: none;
-    color: #333;
-} */
 
-/* .main-menu a:hover {
-    background-color: #f0f0f0;
-} */
+
+
+
+
+
+
+
 
 
 
@@ -575,11 +607,41 @@ button {
     color: #dd171f;
     text-decoration: none;
 }
+.msg{
+    text-align: center;
+    margin: 15px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
 @media(max-width: 1160px)  {
-    .s-hdr-bttm .hdr-fs ul{
+    .s-hdr-bttm .hdr-fs ul a{
         font-size: 10px;
     }
     .hdr-top .container {
@@ -683,9 +745,9 @@ button {
         /* cursor: pointer; */
         background-color: #d63137;
     }
-    .sec01 .date{
+    /* .sec01 .date{
         display: none;
-    }
+    } */
     .Sign-in-box{
         left: 250;
         width: 50%;
@@ -715,21 +777,31 @@ button {
     }
 }
 
+
 @media(max-width: 680px){
     .hdr-top .container {
        display: none;
     }
+
     .srch-sec{
         margin-top: 165;
     }
+
     .margin{
         margin-top: 180px
     }
+
     .Sign-in-box{
         left: 80;
         width: 70%;
     }
+
+    .poll-containre{
+        padding: 30px;
+    }
 }
+
+
 @media(max-width: 575px){
     .srch-sec{
         margin-top: 155;
@@ -758,5 +830,23 @@ button {
         top: 0;
         left: 0;
         width: 100%;
+    }
+
+
+    .header-top .tText ul{
+        text-align: center;
+        /* border: solid; */
+        margin-left: 20px;
+        margin-bottom: 20px
+    }
+
+    .header-top .tText ul li ,.header-top .tText ul li  a{
+        color: #dd171f;
+        font-size: 12px;
+        font-size: bold;
+    }
+   
+    .date{
+        display: none;
     }
 }

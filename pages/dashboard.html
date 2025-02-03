@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Account | TechNewsWorld</title>
+    <title>Tech Blog | TechNewsWorld</title>
 
-    <link rel="shortcut icon" href="../pics/tnw-icon.jpg" type="image/x-icon">
-     <link rel="stylesheet" href="../styles/header.css">
+    <!-- <link rel="stylesheet" href="../styles/blog.css"> -->
+    <link rel="stylesheet" href="../styles/dashboard.css">
+    <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/footer.css">
-    <link rel="stylesheet" href="../styles/setting.css">
-    <!-- <link rel="stylesheet" href="./styles/blog.css"> -->
     <style>
 
     </style>
@@ -29,25 +28,25 @@
                 <div class="hdr-top for-desk">
                     <div class="container">
                         <ul class="f-ul">
-                            <li class="lName"><strong>WELCOME</strong> <strong id="dlsName1"></strong>
+                            <li>WELCOME <div id="uName">NAME</div>
                             </li>
                             <li>
                                 <a>
-                                    <strong><a href="./pages/settings.html">| SETTINGS</a></strong>
+                                    <div><a href="./pages/settings.html">| SETTINGS</a></div>
                                 </a>
                             </li>
                             <li>
                                 <a>
-                                    <strong id="signOutUserAccount">| SIGN OUT</strong>
+                                    <div id="signOutUserAccount">| SIGN OUT</div>
                                 </a>
                             </li>
                         </ul>
                         <ul class="s-ul">
-                            <li><a href="#"><strong> E-COMMERCE TIMES |</strong></a></li>
-                            <li><a href="#"><strong>CRM BUYER |</strong></a></li>
-                            <li><a href="#"><strong>LINUXINSIDER |</strong></a></li>
-                            <li><a href="#"><strong>ECTNEWS.COM |</strong></a></li>
-                            <li><a href="#"><strong>ADVERTISING</strong></a></li>
+                            <li><a href="#">E-COMMERCE TIMES |</a></li>
+                            <li><a href="#">CRM BUYER |</a></li>
+                            <li><a href="#">LINUXINSIDER |</a></li>
+                            <li><a href="#">ECTNEWS.COM |</a></li>
+                            <li><a href="#">ADVERTISING</a></li>
                         </ul>
                     </div>
                 </div>
@@ -74,7 +73,7 @@
                         </div>
                         <div class="hdr-ss" id="headHide">
                             <div class="srch-hid">
-                                <h1>FRONT PAGE</h1>
+                                <h1>RESET PASSWORD</h1>
                                 <div class="search-con">
                                     <div class="search-container2">
                                         <input type="text" class="search-input2" placeholder="SEARCH">
@@ -98,7 +97,7 @@
         </div>
 
         <div class="srch-sec" id="header2">
-            <h1>Front Page</h1>
+            <h1>RESET PASSWORD</h1>
             <div class="search-con">
                 <div class="search-container">
                     <input type="text" class="search-input" placeholder="SEARCH">
@@ -119,22 +118,15 @@
 
         <div class="full-screen-menu" id="fullScreenMenu">
             <div class="header-top">
-                <div class="tText">
-                    <ul>
-                        <li class="lName">WELCOME <strong id="dlsName2"></strong>
-                        </li>
-                        <li>
-                            <a href="../pages/settings.html">
-                                | SETTINGS
-                            </a>
-                        </li>
-                        <li>
-                            <a>
-                                <strong id="signOutUserAccount2"> | SIGN OUT</strong>
-                            </a>
-                        </li>
-                    </ul>
-
+                <div>
+                    <div class="htopic">WELCOME uname |
+                        <a href="../pages/settings.html">
+                            <div> settings | </div>
+                        </a>
+                        <a href="#">
+                            <div> sign out</div>
+                        </a>
+                    </div>
                     <img src="../pics/TNW-Logo-580x200-1.png" alt="" width="250">
                 </div>
                 <!-- <div class="close-button">X</div> -->
@@ -302,105 +294,195 @@
         </a>
     </header>
 
-    <!-- sign in part -->
-    <section class="Sign-in-box" id="Sign-in-box">
-        <div class="signin-container">
-            <div class="close-button-menu">
-                <span class="close-button" onclick="
-                document.getElementById('Sign-in-box').style.display = 'none'
-                ">&times;</span>
-            </div>
 
-            <h2>Existing Members</h2>
-            <p>Enter your Username and Password to sign in.</p>
-            <form id="signInForm">
-                <!-- <label for="username">Username</label> -->
-                <input type="text" id="username" name="username" placeholder="username">
-
-                <!-- <label for="password">Password</label> -->
-                <input type="text" id="password" name="password" placeholder="password">
-
-                <!-- <div class="submit-t"> -->
-                <button type="submit">SIGN IN</button>
-                <!-- </div> -->
-            </form>
-            <div class="links">
-                <div>Forgot Password?<a href="./pages/resetpassword.html"> Click here</a></div>
-                <div>Not a member yet? <a href="./pages/createAccount.html">Join now!</a></div>
-
-            </div>
-        </div>
-    </section>
-
-    
-    <!-- main part -->    
-    <section class="create-section ">
+ 
+    <!-- main part -->
+    <section class="sec00" id="sec01">
         <div class="header">
-            <div class="create-head"><div><a href="#">TECHNEWSWORLD </a> • </div>  Account Management</div>
+            <div class="create-head">
+                <div>
+                    <a href="#">TechNewsWorld </a> • 
+                    <a href="#">Security</a>  • 
+                    <a href="#">Cybersecurity</a>  • 
+                    <a href="#">Next Article in Cybersecurity</a>
+                </div> 
+            </div>
             <div class="date" id="dateTime">January 16, 2025 08:37:11 PM</div>
         </div>
+        <div class="ads">
+            <a href="">
+                <img src="" alt="Top Analysts Reveal How Al-Powered CX Delivers Business Results">
+            </a>
+        </div>
 
-        <h1>Settings for userName</h1>
 
-        <form id="updatesec" class="updatesec">
-            <label for="first-name">First Name <span class="asterisk">*</span></label>
-            <input type="text" id="first-name" name="firstName" required>
 
-            <label for="last-name">Last Name <span class="asterisk">*</span></label>
-            <input type="text" id="last-name" name="lastName" required>
 
-            <label for="email">E-Mail Address <span class="asterisk">*</span></label>
-            <input type="email" id="email" name="email" required>
+        <div class="boad-container">
+            <div class="left-container">
 
-            <label for="remail">Repeat E-Mail Address <span class="asterisk">*</span></label>
-            <input type="email" id="remail" name="remail" required>
+                <section class="left-con-sec1">
+                    <h1>AI Dominates 2025 Cybersecurity Predictions</h1>
+                    <div class="share-new">
+                        <div class="shere-info">
+                            <div class="catogory-txt">
+                                <ul class="article-meta">
+                                    <li>By John P. Mello Jr.  •</li>
+                                    <li>January 7, 2025 5:00 AM PT  •</li>                                
+                                    <li>
+                                        <a href="#">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="14" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 13">
+                                                <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1zm13 2.383-4.708 2.825L15 11.105zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741M1 11.105l4.708-2.897L1 5.383z"/>
+                                            </svg>
+                                            Email Article
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="sharebuttonlist">
+                            <ul>
+                                <li><img src="../pics/tweet-tnw.png" alt="" width="70"> </li>
+                                <li><img src="../pics/face-book-tnw.png" alt="" width="70"> </li>
+                                <li><img src="../pics/inshere-tnw.png" alt="" width="70"> </li>
+                                <li><img src="../pics/shere-tnw.jpg" alt="" width="70"> </li>
+                            </ul>
+                        </div>    
 
-            <label for="uname">Choose Username (case sensitive) <span class="asterisk">*</span></label>
-            <input type="text" id="uname" name="uname" required>
+                    </div>
+                    <div class="image-side">
+                        <img src="../pics/AI-thinking.jpg" alt="AI-thinking.jpg..." width="100%">
+                    </div>
+                    <div class="lead-advers">
+                        <h5>ADVERTISEMENT</h5>
+                        <a href="">
+                            <img src="#" alt="lead gen">
+                            <h2>Quality Leads That Turn Into Deals</h2>
+                        </a>
+                        <p>
+                            Full-service marketing programs from TechNewsWorld deliver sales-ready leads. Segment by geography, industry, company size, job title, and more. <a href="#">Get Started Now.</a> 
+                        </p>
+                    </div>
+                    <div class="text-con">
+                        <p>
+                            <samp>W</samp>
+                            hen it comes to cybersecurity in 2025, artificial intelligence is top of mind for many analysts and professionals.
+                        </p>
+                        <p>
+                            Artificial intelligence will be deployed by both adversaries and defenders, but attackers will benefit more from it, maintained Willy Leichter, CMO of <a href="#">AppSOC</a>, an application security and vulnerability management provider in San Jose, Calif.
+                        </p>
+                        <p>
+                            “We know that AI will be used increasingly on both sides of the cyber war,” he told TechNewsWorld. “However, attackers will continue to be less constrained because they worry less about AI accuracy, ethics, or unintended consequences. Techniques such as highly personalized phishing and scouring networks for legacy weaknesses will benefit from AI.”
+                        </p>
+                        <p>
+                            “While AI has huge potential defensively, there are more constraints — both legal and practical — that will slow adoption,” he said.
+                        </p>
+                        <p>
+                            Chris Hauk, consumer privacy champion at <a href="#">Pixel Privacy</a>, a publisher of online consumer security and privacy guides, predicted 2025 will be a year of AI versus AI, as the good guys use AI to defend against AI-powered cyberattacks.
+                        </p>
+                        <p>
+                            “It will likely be a year of back-and-forth battles as both sides put to use information they’ve gathered from previous attacks to set up new attacks and new defenses,” he told TechNewsWorld.
+                        </p>
+                        <h1>Mitigating AI’s Security Risks</h1>
+                        <p>
+                            Leichter also predicted that cyber adversaries will start targeting AI systems more often. “AI technology greatly expands the attack surface area with rapidly emerging threats to models, datasets, and machine language operations systems,” he explained. “Also, when AI applications are rushed from the lab to production, the full security impact won’t be understood until the inevitable breaches occur.”
+                        </p>
+                        <p>
+                            Karl Holmqvist, founder and CEO of <a href="#">Lastwall</a>, an identity security company based in Honolulu, agreed. “The unchecked, mass deployment of AI tools — which are often rolled out without robust security foundations — will lead to severe consequences in 2025,” he told TechNewsWorld.
+                        </p>
+                        <p>
+                            “Lacking adequate privacy measures and security frameworks, these systems will become prime targets for breaches and manipulation,” he said. “This Wild West approach to AI deployment will leave data and decision-making systems dangerously exposed, pushing organizations to urgently prioritize foundational security controls, transparent AI frameworks, and continuous monitoring to mitigate these escalating risks.”
+                        </p>
+                        <a href="#"></a><img src="#" alt="5 Ways CX Leaders Differentiate for Big Results"></a>
+                        <p>
+                            Leichter also maintained that security teams will have to take on more responsibility for securing AI systems in 2025.
+                        </p>
+                        <p>
+                            “This sounds obvious, but in many organizations, initial AI projects have been driven by data scientists and business specialists, who often bypass conventional application security processes,” he said. “Security teams will fight a losing battle if they try to block or slow down AI initiatives, but they will have to bring rogue AI projects under the security and compliance umbrella.”
+                        </p>
+                        <p>
+                            Leichter also pointed out that AI will expand the attack surface for adversaries targeting software supply chains in 2025. “We’ve already seen supply chains become a major vector for attack, as complex software stacks rely heavily on third-party and open-source code,” he said. “The explosion of AI adoption makes this target larger with new complex vectors of attack on datasets and models.”
+                        </p>
+                        <p>
+                            “Understanding the lineage of models and maintaining the integrity of changing datasets is a complex problem, and currently, there is no viable way for an AI model to unlearn poisonous data,” he added
+                        </p>
+                        <h1>Data Poisoning Threats to AI Models</h1>
+                        <p>
+                            Michael Lieberman, CTO and co-founder of Kusari, a software supply chain security company in Ridgefield, Conn., also sees poisoning large language models as a significant development in 2025. “Data poisoning attacks aimed at manipulating LLMs will become more prevalent, although this method is likely more resource-intensive compared to simpler tactics, such as distributing malicious open LLMs,” he told TechNewsWorld.
+                        </p>
+                        <p>
+                            “Most organizations are not training their own models,” he explained. “Instead, they rely on pre-trained models, often available for free. The lack of transparency regarding the origins of these models makes it easy for malicious actors to introduce harmful ones, as evidenced by the Hugging Face malware incident.” That incident occurred in early 2024 when it was discovered that some 100 LLMs containing hidden backdoors that could execute arbitrary code on users’ machines had been uploaded to the Hugging Face platform.
+                        </p>
+                        <p>
+                            “Future data poisoning efforts are likely to target major players like OpenAI, Meta, and Google, which train their models on vast datasets, making such attacks more challenging to detect,” Lieberman predicted.
+                        </p>                       
+                        <a href="#"></a><img src="#" alt="Automate Your Customer Service at Scale"></a>
+                        <p>
+                            “In 2025, attackers are likely to outpace defenders,” he added. “Attackers are financially motivated, while defenders often struggle to secure adequate budgets since security is not typically viewed as a revenue driver. It may take a significant AI supply chain breach — akin to the SolarWinds Sunburst incident — to prompt the industry to take the threat seriously.”
+                        </p>
+                        <p>
+                            Thanks to AI, there will also be more threat actors launching more sophisticated attacks in 2025. “As AI becomes more capable and accessible, the barrier to entry for less skilled attackers will become lower while also accelerating the speed at which attacks can be carried out,” explained Justin Blackburn, a senior cloud threat detection engineer at <a href="#">AppOmni</a>, a SaaS security management software company, in San Mateo, Calif.
+                        </p>
+                        <p>
+                            “Additionally, the emergence of AI-powered bots will enable threat actors to execute large-scale attacks with minimal effort,” he told TechNewsWorld. “Armed with these AI-powered tools, even less capable adversaries may be able to gain unauthorized access to sensitive data and disrupt services on a scale previously only seen by more sophisticated, well-funded attackers.”
+                        </p>
+                        <h1>Script Babies Grow Up</h1>
+                        <p>
+                            In 2025, the rise of agentic AI — AI capable of making independent decisions, adapting to their environment, and taking actions without direct human intervention — will exacerbate problems for defenders, too. “Advances in artificial intelligence are expected to empower non-state actors to develop autonomous cyber weapons,” said  <a href="#">Jason Pittman</a>, a collegiate associate professor at the school of cybersecurity and information technology at the University of Maryland Global Campus in Adelphi, Md.
+                        </p>
+                        <p>
+                            “Agentic AI operates autonomously with goal-directed behaviors,” he told TechNewsWorld. “Such systems can use frontier algorithms to identify vulnerabilities, infiltrate systems, and evolve their tactics in real-time without human steering. “
+                        </p>
+                        <p>
+                            “These features distinguish it from other AI systems that rely on predefined instructions and require human input,” he explained.
+                        </p>
+                        <p>
+                            “Like the Morris Worm in decades past, the release of agentic cyber weapons might begin as an accident, which is more troublesome. This is because the accessibility of advanced AI tools and the proliferation of open-source machine learning frameworks lower the barrier for developing sophisticated cyber weapons. Once created, the powerful autonomy feature can easily lead to agentic AI escaping its safety measures.”
+                        </p>
+                        <a href="#"></a><img src="#" alt="Real insights from the largest CX dataset"></a>
+                        <p>
+                            As harmful as AI can be in the hands of threat actors, it can also help better secure data, like personally identifiable information (PII). “After analyzing more than six million Google Drive files, we discovered 40% of the files contained PII that put businesses at risk of a data breach,” said Rich Vibert, co-founder and CEO of <a href="#">Metomic</a>, a data privacy platform in London.
+                        </p>
+                        <p>
+                            “As we enter 2025, we’ll see more companies prioritize automated data classification methods to reduce the amount of vulnerable information inadvertently saved in publicly accessible files and collaborative workspaces across SaaS and cloud environments,” he continued.
+                        </p>
+                        <p>
+                            “Businesses will increasingly deploy AI-driven tools that can automatically identify, tag, and secure sensitive information,” he said. “This shift will enable companies to keep up with the vast amounts of data generated daily, ensuring that sensitive data is continually safeguarded and that unnecessary data exposure is minimized.”
+                        </p>
+                        <p>
+                            “The thought of an autonomous security operations center using gen AI generated a lot of hype, but it couldn’t be further from reality,” he continued. “In 2025, the trend will continue, and security practitioners will sink deeper into disenchantment as challenges such as inadequate budgets and unrealized AI benefits reduce the number of security-focused gen AI deployments.”
+                        </p>
+                        <div class="sharebuttonlist">
+                            <ul>
+                                <li><img src="../pics/tweet-tnw.png" alt="" width="70"> </li>
+                                <li><img src="../pics/face-book-tnw.png" alt="" width="70"> </li>
+                                <li><img src="../pics/inshere-tnw.png" alt="" width="70"> </li>
+                                <li><img src="../pics/shere-tnw.jpg" alt="" width="70"> </li>
+                            </ul>
+                        </div> 
+                    </div>
+                    <div class="john-border">
+                        <div class="john-border-img"><img src="../pics/John-P.-Mello-Jr..jpg" alt="" width="100%" height="100%"></div>
+                        <div>
+                            <p>
+                                <strong>John P. Mello Jr.</strong> has been an ECT News Network reporter since 2003. His areas of focus include cybersecurity, IT issues, privacy, e-commerce, social media, artificial intelligence, big data and consumer electronics. He has written and edited for numerous publications, including the Boston Business Journal, the Boston Phoenix, Megapixel.Net and Government Security News. <a href="#">Email John.</a>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="Comment-con">
+                        <h1>Leave a Comment</h1>
+                        <p>Logged in as <a href="#" class="log">ola. Logout »</a></p>
+                    </div>
 
-            <label for="password">Choose Password (case sensitive) <span class="asterisk">*</span></label>
-            <input type="new-password" id="password" name="password" required>
-
-            <label for="rpassword">Repeat Password <span class="asterisk">*</span></label>
-            <input type="new-password" id="rpassword" name="rpassword" required>
-
-            
-            <div class="email-info">
-                <p>Please enter a valid e-mail address where we can send your account activation information. Your
-                    e-mail address will not be displayed to other users without your authorization and will remain
-                    confidential. <a href="#">Privacy Policy</a>.</p>
+                </section>
+                
             </div>
-            <div class="g-recaptcha" data-sitekey="6LdA0k8eAAAAABlR31QtlmMDzU7kQXc0PE7FHhDz">
-                <div style="width: 304px; height: 78px;"><div>
-                    <iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-82pi4oew1z51" frameborder="0" scrolling="no" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation" src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LdA0k8eAAAAABlR31QtlmMDzU7kQXc0PE7FHhDz&amp;co=aHR0cHM6Ly93d3cudGVjaG5ld3N3b3JsZC5jb206NDQz&amp;hl=en&amp;v=1Bq_oiMBd4XPUhKDwr0YL1Js&amp;size=normal&amp;cb=8jw59763otxq">
 
-                    </iframe>
-                    </div>
-                        <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response" style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;">
-
-                        </textarea>
-                    </div>
-                    <iframe style="display: none;">
-
-                    </iframe>
-                </div>
-            
-            
-            
-            
-            
-            <!-- <div class="recaptcha">
-                <input type="checkbox" id="recaptcha" name="recaptcha">
-                <div>
-                    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
-                    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                </div>
-            </div> -->
-
-            <button type="submit">UPDATE</button>
-        </form>
+            <div class="right-container">
+               
+            </div>
+        </div>
     </section>
-
 
 
     <footer>
@@ -494,9 +576,9 @@
 
     </div>
 
-    <!-- <script type="module" src="../script/blog.js"></script> -->
-    <script src="../script/header.js"></script>
-    <script type="module"  src="../script/setting.js"></script>
+    <script type="module" src="../script/header.js"></script>
+    <script src="../script/dashboard.js"></script>
+    <script type="module" src="../script/signIn.js"></script>
 </body>
 
 </html>
