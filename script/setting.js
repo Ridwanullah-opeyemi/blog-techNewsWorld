@@ -116,7 +116,7 @@ async function signOutUser() {
     try {
         await signOut(auth);  // Attempt to sign out the user from Firebase authentication
         alert("Sign out successful"); // Show a success message when sign-out is successful
-        window.location.href = "./index.html"
+        window.location.href = "../index.html"
     } catch (error) {
         console.log(error); // Log any errors that occur during sign-out
     }
