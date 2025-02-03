@@ -1,7 +1,7 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
 import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
-import { getAuth, onAuthStateChanged,signOut } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
+import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
@@ -56,11 +56,11 @@ onAuthStateChanged(auth, async (user) => {
                 // Set the heading with username
                 const heading = document.getElementById('dlsName1');
                 const heading2 = document.getElementById('dlsName2');
-                if (heading) {
+                const heading3 = document.getElementById('useName');
+                if (heading || heading2 || heading3) {
                     heading.textContent = `${userData.uname}`;
-                }
-                if (heading2) {
                     heading2.textContent = `${userData.uname}`;
+                    heading3.textContent = `Settings for ${userData.uname}`;
                 }
             } else {
                 console.log("No such document!");
