@@ -57,7 +57,7 @@ let cardArray = [
 cardArray.forEach((card) => {
     let { Image, title, text } = card
     cardContainer.innerHTML += `
-             <div class="news-card">
+             <div class="news-card" onclick="window.location.href = './pages/dashboard.html'">
                 <div class="card-img">
                     <img src="${Image} " width="100%" height="90%" alt="">
                 </div>

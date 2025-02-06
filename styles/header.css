@@ -12,7 +12,7 @@
 /* button */
  .btn {
     background-color: #dd171f;
-    color: #000000;
+    color: #ffffff;
     border: none;
     cursor: pointer;
     overflow: hidden;
@@ -26,12 +26,12 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color:  #070707bd;
+    background-color:  #07070776;
     transition: bottom 0.3s ease;
     color: #ffffff;
 }
 
-.btn:hover::before {
+.btn:hover::before,.btnhover:hover::before {
     bottom: 0;
 }
 
@@ -39,6 +39,28 @@
     transform: translateY(1px);
 } 
 
+
+.btnhover {
+    background-color: #ffffff;
+    color: #000000;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+}
+
+
+.btnhover::before {
+    content: "";
+    position: absolute;
+    bottom: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:  #58505083;
+    transition: bottom 0.3s ease;
+    color: #ffffff;
+}
 
 
 
@@ -369,12 +391,11 @@ hr{
 }
 .center-main{
     display: flex;
-    /* justify-content: space-between; */
 }
 
 .menu-second-side{
     width: 70%;
-    border: solid;
+    /* border: solid;   */
     padding-top: 70px;
 }
 
@@ -382,7 +403,7 @@ hr{
     width: 98%;
     margin-inline: auto;
     align-items: center;
-    border: solid;
+    /* border: solid; */
     display: flex ;
     border-bottom: #888 1px solid;
     justify-content: space-between ;
@@ -422,16 +443,31 @@ hr{
 .menu-second-side ul li a:hover{
     color: #dd171f;
 }
-.ComputingOver,.InternetOver{
+.menu-second-side {
     display: none;
 }
+.submenu{
+    overflow-y: scroll;
+    height: 65%;
+}
+
+
+
+
+
+
+
+
+
+
+
 
 
 .header-main1 {
     width: 20%;
     padding: 0 20px;
-    border: solid;
-    /* border-right: 1px solid #ccc; */
+    /* border: solid; */
+    border-right: 1px solid #c9c3c3;
     margin-left: 5%;
 }
 
@@ -439,14 +475,14 @@ hr{
     width: 100%;
     margin-bottom: 20px;
     display: flex;
-    border: solid #151414 1px;
+    border: solid #a5a0a093 2px;
     height: 50px;
 }
 
 .search-bar input {
     flex-grow: 1;
     padding: 12px;
-    border: 1px solid gray;
+    /* border: 1px solid gray; */
     outline: none;
     border: none;
     width: 80%;
@@ -456,19 +492,15 @@ hr{
 .search-bar button {
     width: 20%;
     padding: 8px 10px;
-    /* border-right: 1px solid gray;
-    border-top: 1px solid gray;
-    border-bottom: 1px solid gray; */
-    border-left: none;
+    border: none;
     background-color: white;
     cursor: pointer;
     color: #000000;
 }
 
 .main-menu {
-    border: solid;
+    /* border: solid; */
     width: 100%;
-    /* position: relative; */
 }
 .main-menu button{
     display: flex;
@@ -538,7 +570,6 @@ p {
 .search-container2 {
     width: calc(100% - 12px);
     padding: 12px;
-    /* border: 1px solid #ccc; */
     box-sizing: border-box;
     margin-bottom: 15px;
 }
@@ -574,7 +605,6 @@ button {
 .links a {
     margin-bottom: 50px;
     color: #000000;
-    /* Blue link color */
     text-decoration: none;
 }
 
@@ -659,7 +689,6 @@ button {
     }
     .sec01 {
         width: 95%;
-        /* border: solid;///////// */
     }
     .Sign-in-box{
         left: 400;
@@ -702,13 +731,9 @@ button {
     }
     .header-main1{
         width: 95%;
-        /* margin-left: none; */
         padding-left: 0;
-        /* margin-inline: auto; */
-        /* border: solid green; */
     }
     .full-screen-menu{
-        /* border: solid red; */
         width: 100%;
     }
     .main-menu button{
@@ -722,7 +747,6 @@ button {
     }
     .main-menu,.search-bar{
         width: 100%;
-        /* border: solid hotpink; */
         margin: 0;
         padding: 0;
     }
@@ -745,15 +769,31 @@ button {
         /* cursor: pointer; */
         background-color: #d63137;
     }
-    /* .sec01 .date{
-        display: none;
-    } */
     .Sign-in-box{
         left: 250;
         width: 50%;
     }
 
 }
+
+
+
+
+@media (max-width: 768px) {
+    .menu {
+        display: none; 
+    }
+
+    .menu-button {
+        display: block; 
+    }
+    .computingNone{
+        display: none;
+    }
+}
+
+
+
 
 
 @media(max-width: 700px) {
@@ -835,7 +875,6 @@ button {
 
     .header-top .tText ul{
         text-align: center;
-        /* border: solid; */
         margin-left: 20px;
         margin-bottom: 20px
     }

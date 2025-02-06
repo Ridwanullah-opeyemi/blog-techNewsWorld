@@ -1,7 +1,7 @@
 // Import Firebase Modules
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
 import { getFirestore, collection, addDoc, serverTimestamp, getDoc, doc, onSnapshot, orderBy, query } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
-import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+import { getAuth, onAuthStateChanged,signOut } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
 
 // Firebase Configuration
 const firebaseConfig = {
@@ -215,7 +215,7 @@ async function signOutUser() {
     try {
         await signOut(auth);
         alert("Sign out successful");
-        window.location.href = "./index.html"
+        window.location.href = "../index.html"
     } catch (error) {
         console.log(error);
     }

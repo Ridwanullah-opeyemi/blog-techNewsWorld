@@ -5,10 +5,12 @@ body {
     box-sizing: border-box;
 }
 
+
 .create-section h1 {
     font-size: 2em;
     margin-bottom: 10px;
 }
+
 
 .create-section {
     width: 80%;
@@ -16,31 +18,41 @@ body {
     margin-inline: auto;
 }
 
+
 .create-section .create-head{
     display: flex;
 }
 
+
 .create-section .create-head div {
     color: #d11f26;
 }
+
 
 .create-section .create-head div a{
     color: #d11f26;
     text-decoration: none;
 }
 
+
  .create-head div a:hover{
     text-decoration: underline;
 }
+
+
 .member {
     font-size: 1.2em;
     margin-bottom: 25px;
     margin-top: 10px;
 }
+
+
 .updatesec label {
     display: block;
     margin-bottom: 5px;
 }
+
+
 .updatesec input {
     width: calc(100% - 12px);
     padding: 10px;
@@ -49,8 +61,15 @@ body {
     border-radius: 4px;
     box-sizing: border-box;
 }
+
+
 form {
     width: 65%;
+}
+
+
+.UPDATE{
+    margin-top: 20px;
 }
 
 
@@ -59,14 +78,20 @@ form {
 
 
 @media(max-width: 990px)  {
+
     .create-section{
         width: 100%;
         padding: 10px;
     }
+
+
     form {
         width: 100%;
     }
+
+
     input, select{
         margin-bottom: 25px;
     }
+
 }

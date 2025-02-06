@@ -62,7 +62,7 @@ closeMenu.addEventListener('click', () => {
 // date 
 function formatDateTime() {
     const now = new Date();
-    
+
     // Get date components
     const options = { month: 'long', day: 'numeric', year: 'numeric' }; // Format: "January 16, 2025"
     const datePart = now.toLocaleDateString('en-US', options);
@@ -73,7 +73,7 @@ function formatDateTime() {
     const seconds = now.getSeconds().toString().padStart(2, '0');
     const ampm = hours >= 12 ? 'PM' : 'AM';
     hours = hours % 12 || 12; // Convert to 12-hour format
-    
+
     const timePart = `${hours.toString().padStart(2, '0')}:${minutes}:${seconds} ${ampm}`;
 
     // Combine date and time
@@ -96,70 +96,6 @@ formatDateTime(); // Call once to set initial value
 
 
 
-// submenu part 
-// const onComputing = document.getElementById('onComputing');
-// const ComputingOver = document.getElementById('ComputingOver');
-// const InternetOver = document.getElementById('InternetOver');
-// const InAdvertising = document.getElementById('InAdvertising');
-// const SiteMapOver = document.getElementById('SiteMapOver');
-// const NewslettersOver = document.getElementById('NewslettersOver');
-// const TechnologyOver = document.getElementById('TechnologyOver');
-// const MostPopularOver = document.getElementById('MostPopularOver');
-// const TechBlogOver = document.getElementById('TechBlogOver');
-// const SecurityOver = document.getElementById('SecurityOver');
-// const ReviewsOver = document.getElementById('ReviewsOver');
-// const ITOver = document.getElementById('ITOver');
-// const MobileOver = document.getElementById('MobileOver');
-// const onInternet = document.getElementById('onInternet');
-// const onIT = document.getElementById('onIT');
-// const onMobile = document.getElementById('onMobile');
-// const onReviews = document.getElementById('onReviews');
-// const onSecurity = document.getElementById('onSecurity');
-// const onTechBlog = document.getElementById('onTechBlog');
-// const onTechnology = document.getElementById('onTechnology');
-// const onMostPopular = document.getElementById('onMostPopular');
-// const onSiteMap = document.getElementById('onSiteMap');
-// const onNewsletters = document.getElementById('onNewsletters');
-// const onAdvertising = document.getElementById('onAdvertising');
-
-
-
-// onComputing.addEventListener('mouseover', () => {
-//     ComputingOver.style.display = 'block';
-// });
-// onInternet.addEventListener('mouseover', () => {
-//     InternetOver.style.display = 'block';
-// })
-// onIT.addEventListener('mouseover', () => {
-//     ITOver.style.display = 'block';
-// })
-// onMobile.addEventListener('mouseover', () => {
-//     MobileOver.style.display = 'block';
-// })
-// onReviews.addEventListener('mouseover', () => {
-//     ReviewsOver.style.display = 'block';
-// })
-// onSecurity.addEventListener('mouseover', () => {
-//     SecurityOver.style.display = 'block';
-// })
-// onTechBlog.addEventListener('mouseover', () => {
-//     TechBlogOver.style.display = 'block';
-// })
-// onTechnology.addEventListener('mouseover', () => {
-//     TechnologyOver.style.display = 'block';
-// })
-// onMostPopular.addEventListener('mouseover', () => {
-//     MostPopularOver.style.display = 'block';
-// })
-// onNewsletters.addEventListener('mouseover', () => {
-//     NewslettersOver.style.display = 'block';
-// })
-// onAdvertising.addEventListener('mouseover', () => {
-//     AdvertisingOver.style.display = 'block';
-// })
-// onSiteMap.addEventListener('mouseover', () => {
-//     SiteMapOver.style.display = 'block';
-// })
 
 
 
@@ -169,9 +105,65 @@ formatDateTime(); // Call once to set initial value
 
 
 
-// onInternet.addEventListener('mouseout', () => {
-//     InternetOver.style.display = 'none  ';
-// })
-// onComputing.addEventListener('mouseout', () => {
-//     ComputingOver.style.display = 'none';
-// });
+
+
+// Check if the screen is small
+const isSmallScreen = window.matchMedia("(max-width: 768px)").matches;
+
+// Menu Items Array
+const menuItems = [
+    { button: 'onComputing', menu: 'ComputingOver' },
+    { button: 'onInternet', menu: 'InternetOver' },
+    { button: 'onIT', menu: 'ITOver' },
+    { button: 'onMobile', menu: 'MobileOver' },
+    { button: 'onSecurity', menu: 'SecurityOver' },
+    { button: 'onTechnology', menu: 'TechnologyOver' },
+    { button: 'onNewsletters', menu: 'NewslettersOver' }
+];
+
+// Function to hide all menus
+function hideAllMenus() {
+    menuItems.forEach(item => {
+        document.getElementById(item.menu).style.display = 'none';
+    });
+}
+
+// Show first menu (Computing) on page load
+document.addEventListener('DOMContentLoaded', () => {
+    hideAllMenus(); // Hide all first
+    document.getElementById('ComputingOver').style.display = 'block'; // Show first submenu
+});
+
+// Add Event Listeners
+menuItems.forEach(item => {
+    const button = document.getElementById(item.button);
+    const menu = document.getElementById(item.menu);
+
+    if (isSmallScreen) {
+        // On small screens, simply hide all submenus
+        menu.style.display = 'none'; // Ensure the submenu is hidden by default
+
+        // Disable hover or click functionality for mobile
+        button.addEventListener('click', () => {
+            // Do nothing or simply add some feedback if needed (e.g., alert)
+        });
+        document.addEventListener('DOMContentLoaded', () => {
+            hideAllMenus(); // Hide all first
+            document.getElementById('ComputingOver').style.display = 'none'; // Show first submenu
+        });
+    } else {
+        // Hover behavior for larger screens
+        button.addEventListener('mouseenter', () => {
+            hideAllMenus();
+            menu.style.display = 'block';
+        });
+
+        menu.addEventListener('mouseenter', () => {
+            menu.style.display = 'block';
+        });
+
+        menu.addEventListener('mouseleave', () => {
+            menu.style.display = 'block';
+        });
+    }
+});
