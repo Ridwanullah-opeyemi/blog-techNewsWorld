@@ -1,3 +1,145 @@
+// Import Firebase Modules
+import { initializeApp } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-app.js";
+import { getFirestore, collection, addDoc, serverTimestamp, getDoc, doc, onSnapshot, orderBy, query } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-firestore.js";
+import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/11.1.0/firebase-auth.js";
+
+// Firebase Configuration
+const firebaseConfig = {
+    apiKey: "AIzaSyB6J3iRzEyStm2TYk2LbluclZZdjx5wrzU",
+    authDomain: "blog-d0b19.firebaseapp.com",
+    projectId: "blog-d0b19",
+    storageBucket: "blog-d0b19.firebasestorage.app",
+    messagingSenderId: "223199572346",
+    appId: "1:223199572346:web:d0bc53967660154f0026c3"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+const auth = getAuth();
+const db = getFirestore(app);
+
+// References
+const commentsCollection = collection(db, "comments");
+const Comment_con = document.getElementById('Comment_con');
+const commentInput = document.getElementById('commentid');
+const addCommentButton = document.getElementById('addComment');
+const dlsName1 = document.getElementById("dlsName1");
+const dlsName2 = document.getElementById("dlsName2");
+const dlsName3 = document.getElementById("dlsName3");
+const dlsName4 = document.getElementById("dlsName4");
+
+
+
+// Monitor Authentication State
+onAuthStateChanged(auth, async (user) => {
+    if (user) {
+        try {
+            console.log("User Logged In:", user);
+            const id = user.uid;
+            const docRef = doc(db, "createUser", id); 
+            const docSnap = await getDoc(docRef);
+
+            if (docSnap.exists()) {
+                let userName = docSnap.data().uname.toUpperCase();
+                dlsName1.innerHTML = userName;
+                dlsName2.innerHTML = userName;
+                dlsName3.innerHTML = userName;
+                dlsName4.innerHTML = userName;
+                console.log("User Name:", userName);
+            } else {
+                console.log("No user document found in Firestore.");
+            }
+            
+        } catch (error) {
+            console.error("Error fetching user data:", error);
+        }
+
+        // Load Comments After Authentication
+        displayAllComments();
+    } else {
+        Comment_con.innerHTML = "<h2>Please log in to see comments</h2>";
+    }
+});
+
+
+// Add Comment Function
+addCommentButton.addEventListener('click', addComment);
+
+async function addComment() {
+    const commentValue = commentInput.value.trim();
+    const user = auth.currentUser;
+
+    if (!user || !commentValue) {
+        alert("You must be logged in and enter a comment.");
+        return;
+    }
+
+    try {
+        const userDoc = await getDoc(doc(db, "createUser", user.uid));
+        if (!userDoc.exists()) {
+            throw new Error("User data not found.");
+        }
+
+        await addDoc(commentsCollection, {
+            userId: user.uid,
+            comment: commentValue,
+            timestamp: serverTimestamp()
+        });
+
+        commentInput.value = ""; 
+    } catch (error) {
+        console.error("Error adding comment:", error);
+        alert("Error adding comment. Please try again.");
+    }
+}
+
+
+
+// Display Comments
+function displayComment(commentData) {
+    const newCommentDiv = document.createElement('div');
+    newCommentDiv.classList.add('datecommit');
+
+    // Convert Firestore Timestamp
+    let formattedDate = "Just now";
+    if (commentData.timestamp) {
+        const date = commentData.timestamp.toDate();
+        formattedDate = `${date.toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} at 
+                         ${date.getHours() % 12 || 12}:${date.getMinutes().toString().padStart(2, '0')} 
+                         ${date.getHours() >= 12 ? 'PM' : 'AM'}`;
+    }
+
+    newCommentDiv.innerHTML = `
+        <div><strong>Yor Comment</strong></div>
+        <a href="#">${formattedDate}</a>
+        <p>Your comment is awaiting moderation. This is a preview; it will be visible after approval.</p>
+        <p>${commentData.comment}</p>
+    `;
+
+    Comment_con.appendChild(newCommentDiv);
+}
+
+// Display All Comments in Real Time
+function displayAllComments() {
+    Comment_con.innerHTML = ""; 
+
+    const q = query(commentsCollection, orderBy("timestamp", "desc"));
+
+    onSnapshot(q, (querySnapshot) => {
+        Comment_con.innerHTML = ""; 
+
+        querySnapshot.forEach((doc) => {
+            const commentData = doc.data();
+            displayComment(commentData);
+        });
+    });
+}
+
+
+
+
+
+
 //  card display
 let cardArray = [
     {
@@ -54,133 +196,30 @@ let cardArray = [
     },
 ]
 
-cardArray.forEach((card) => {
-    let { Image, title, text } = card
-    // console.log(Image);
-    cardContainer.innerHTML += `
-             <div class="news-card">
-                <div class="card-img">
-                    <img src="${Image} " width="100%" height="90%" alt="">
-                </div>
-                <div class="card-text">
-                    <h2>${title}</h2>
-                    <p>${text}</p>
-                </div>
-            </div>
-    `
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-const newsData = {
-    mainNews: {
-        image: "../pics/computer-shopping.jpg",
-        title: "Biden Bashed Over AI Diffusion Policy",
-        text: "An eleventh-hour move by the Biden Administration to regulate how American AI technology is shared with the world is coming under fire from the nation's tech sector..."
-    },
-    sideNews: [
-        { image: "../pics/wildfire-firefighter.jpg", title: "Building Back a Better Los Angeles With Fire-Resistant Homes", text: "For decades, Los Angeles has had some of the strongest building codes for earthquakes and localized fires, but large-scale fire events are new to the region and appear to be..." },
-        { image: "../pics/holiday-gifts.jpg", title: "5 Tech Gifts To Brighten Their Holidays", text: "Rob Enderle's curated list of standout tech gifts that are sure to impress includes innovative gadgets for every budget, fro..." },
-        { image: "../pics/IT-team.jpg", title: "AI Dominates 2025 Cybersecurity Predictions", text: "Experts predict new threats, expanded attack surfaces, and the critical need for secure and responsible AI adoption as it reshapes the cybersecurity landscape. This includes addressing AI-powered attacks and ensuring data privacy in AI systems." },
-        { image: "../pics/computer-shopping.jpg", title: "Biden Bashed Over AI Diffusion Policy", text: "Move by the Biden Administration to regulate how American AI technology is shared with the world is coming under fire from the nation's tech sector..." },
-        { image: "../pics/job-search-smartphone.jpg", title: "Job Seekers Targeted by Scammers in Mobile Phishing Campaign", text: "The campaign discovered by Zimperium zLabs targets Android mobile phones and aims to distribute a variant of the Antidot bankin..." }
-    ]
-};
-
-const mainNewsImage = document.getElementById("main-news-image");
-const mainNewsTitle = document.getElementById("main-news-title");
-const mainNewsText = document.getElementById("main-news-text");
-const sideNewsContainer = document.getElementById("side-news-container");
-
-// Populate Side News
-newsData.sideNews.forEach((newsItem, index) => {
-    const itemDiv = document.createElement("div");
-    itemDiv.classList.add("news-item");
-    itemDiv.dataset.index = index;
-
-    const img = document.createElement("img");
-    img.src = newsItem.image;
-    img.alt = "News Image";
-
-    const p = document.createElement("p");
-    p.textContent = newsItem.title;
-
-    itemDiv.appendChild(img);
-    itemDiv.appendChild(p);
-    sideNewsContainer.appendChild(itemDiv);
-});
-
-const sideNewsItems = document.querySelectorAll(".news-item");
-let currentNewsIndex = 0;
-
-function updateMainNewsSequentially() {
-    // Remove the active class from all side news items
-    sideNewsItems.forEach(item => item.classList.remove("active"));
-
-    // Update the main news display
-    const currentNews = newsData.sideNews[currentNewsIndex];
-    mainNewsImage.src = currentNews.image;
-    mainNewsTitle.textContent = currentNews.title;
-    mainNewsText.textContent = currentNews.text;
-
-    // Highlight the current news item
-    sideNewsItems[currentNewsIndex].classList.add("active");
-
-    // Move to the next news item
-    currentNewsIndex = (currentNewsIndex + 1) % newsData.sideNews.length;
-}
-
-// Auto-update the main news every 3 seconds
-setInterval(updateMainNewsSequentially, 5000);
-
-function showResults() {
-    let selectedOption = document.querySelector('input[name="poll"]:checked');
-    let resultsDiv = document.getElementById("results");
-
-    if (selectedOption) {
-        resultsDiv.textContent = "You selected: " + selectedOption.value;
-        resultsDiv.style.display = "block";
-    } else {
-        alert("Please select an option before voting.");
-    }
-}
-
-// Initialize the first main news display
-updateMainNewsSequentially();
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 //  carousel part
 const carouselInner = document.getElementById('carouselInner');
 const prevButton = document.getElementById('prevButton');
 const nextButton = document.getElementById('nextButton');
+
 let currentIndex = 0;
+
+
+//sign-out part
+let signOutUserAccount = document.getElementById('signOutUserAccount')
+let signOutUserAccount2 = document.getElementById('signOutUserAccount2')
+signOutUserAccount.addEventListener("click", signOutUser)
+signOutUserAccount2.addEventListener("click", signOutUser)
+
+async function signOutUser() {
+    try {
+        await signOut(auth);
+        alert("Sign out successful");
+        window.location.href = "./index.html"
+    } catch (error) {
+        console.log(error);
+    }
+}
 let intervalId;
 
 
@@ -191,6 +230,7 @@ cardArray.forEach((carousel) => {
     <div class="carousel-item"><img src="${Image}" alt="AI"><h2>${title}</h2></div>
   `;
 });
+
 
 // Wait for the DOM to update before calculating item width
 setTimeout(() => {
@@ -240,4 +280,29 @@ setTimeout(() => {
 
     startCarousel();
     updateCarousel();
-}, 100); // Delay to allow DOM updates
+}, 100); 
+
+
+
+
+
+// Scroll stories
+document.addEventListener("DOMContentLoaded", function () {
+    document.querySelectorAll(".story-list-container").forEach(container => {
+        const storyList = container.querySelector(".story-list");
+        const leftButton = container.parentElement.querySelector(".leftIcon");
+        const rightButton = container.parentElement.querySelector(".rightIcon");
+
+        if (storyList && leftButton && rightButton) {
+            // Scroll stories to the left
+            rightButton.addEventListener("click", function () {
+                storyList.scrollBy({ left: -350, behavior: "smooth" });
+            });
+
+            // Scroll stories to the right
+            leftButton.addEventListener("click", function () {
+                storyList.scrollBy({ left: 350, behavior: "smooth" });
+            });
+        }
+    });
+});

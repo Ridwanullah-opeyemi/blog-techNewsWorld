@@ -37,20 +37,12 @@ onAuthStateChanged(auth, async (user) => {
 
             console.log(userName);
 
-            // const { email, fullName } = docSnap.data();
-            // document.querySelector(".card-title").textContent = fullName
-            // document.querySelector(".card-text").textContent = `Email: ${email}`;
-            // profileCard.classList.remove("d-none")
         } catch (error) {
             console.log(error);
         }
-        // finally {
-        //     spinner.classList.add("d-none")
-        // }
     } else {
         console.log('no user');
-
-        // window.location.replace("./pages/createAccount.html")
+        window.location.replace("./pages/createAccount.html")
     }
 })
 
@@ -62,13 +54,14 @@ signOutUserAccount2.addEventListener("click", signOutUser)
 
 async function signOutUser() {
     try {
-        await signOut(auth);  // Attempt to sign out the user from Firebase authentication
-        alert("Sign out successful"); // Show a success message when sign-out is successful
+        await signOut(auth);  
+        alert("Sign out successful"); 
         window.location.href = "./index.html"
     } catch (error) {
-        console.log(error); // Log any errors that occur during sign-out
+        console.log(error);
     }
 }
+
 
 
 
@@ -129,20 +122,23 @@ let cardArray = [
     },
 ]
 
+
 cardArray.forEach((card) => {
+
     let { Image, title, text } = card
-    // console.log(Image);
+
     cardContainer.innerHTML += `
-             <div class="news-card">
-                <div class="card-img">
-                    <img src="${Image} " width="100%" height="90%" alt="">
-                </div>
-                <div class="card-text">
-                    <h2>${title}</h2>
-                    <p>${text}</p>
-                </div>
-            </div>
-    `
+    <div class="news-card" onclick="window.location.href = './pages/dashboard.html'">
+       <div class="card-img">
+           <img src="${Image} " width="100%" height="90%" alt="">
+       </div>
+       <div class="card-text">
+           <h2>${title}</h2>
+           <p>${text}</p>
+       </div>
+   </div>
+`
+    
 })
 
 
@@ -300,6 +296,6 @@ setTimeout(() => {
 
     startCarousel();
     updateCarousel();
-}, 100); // Delay to allow DOM updates
+}, 100); 
 
 

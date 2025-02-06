@@ -56,7 +56,6 @@ let cardArray = [
 
 cardArray.forEach((card) => {
     let { Image, title, text } = card
-    // console.log(Image);
     cardContainer.innerHTML += `
              <div class="news-card">
                 <div class="card-img">
@@ -69,7 +68,6 @@ cardArray.forEach((card) => {
             </div>
     `
 })
-
 
 
 
@@ -91,10 +89,15 @@ const newsData = {
     ]
 };
 
+
 const mainNewsImage = document.getElementById("main-news-image");
 const mainNewsTitle = document.getElementById("main-news-title");
 const mainNewsText = document.getElementById("main-news-text");
 const sideNewsContainer = document.getElementById("side-news-container");
+
+
+
+
 
 // Populate Side News
 newsData.sideNews.forEach((newsItem, index) => {
@@ -149,8 +152,8 @@ function showResults() {
     }
 }
 
-// Initialize the first main news display
 updateMainNewsSequentially();
+
 
 
 
@@ -164,7 +167,6 @@ let intervalId;
 
 
 
-
 // Dynamically add items to carousel
 cardArray.forEach((carousel) => {
     const { Image, title } = carousel;
@@ -172,8 +174,6 @@ cardArray.forEach((carousel) => {
     <div class="carousel-item"><img src="${Image}" alt="AI"><h2>${title}</h2></div>
   `;
 });
-
-
 
 
 
@@ -225,5 +225,5 @@ setTimeout(() => {
 
     startCarousel();
     updateCarousel();
-}, 100); // Delay to allow DOM updates
+}, 100); 
 
