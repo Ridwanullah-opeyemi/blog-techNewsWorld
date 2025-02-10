@@ -602,6 +602,7 @@ input[type="checkbox"] {
 
 
 
+
 /*  Responsive Design for Small Screens */ 
 @media(max-width: 990px) {
 
@@ -676,6 +677,20 @@ input[type="checkbox"] {
 
     .poll-options label {
         display: block;
+    }
+
+
+    .john-border-img{
+        width: 120px;
+        height: 120px;
+    }
+
+
+    .john-border{
+        display: flex;
+        margin-bottom: 5px;
+        flex-direction: column;
+        border: solid green 2px;
     }
 
 }
@@ -758,6 +773,8 @@ input[type="checkbox"] {
         max-width: 100%;
     }
 
+    
+  
 
     .nav-buttons {
         width: auto;

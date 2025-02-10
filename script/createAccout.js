@@ -27,12 +27,27 @@ const colRef = collection(db, "createUser")
 
 
 
-// 
+
+function validateCheckbox() {
+    const robotCheckbox = document.getElementById("robot");
+
+    if (!robotCheckbox.checked) {
+        alert("Please confirm that you are not a robot.");
+        return false;
+    }
+    return true;
+}
+
+
+
+
 signUpForm.addEventListener("submit", createUserAccount)
 
 async function createUserAccount(e) {
     e.preventDefault()
-    alert("hello words")
+    if (!validateCheckbox()) {
+        return
+    }
     let { firstName, lastName, email, remail, uname, password, rpassword, title, companySize, annualSales, businessType } = signUpForm
     let details = {
         firstName: firstName.value,

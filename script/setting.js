@@ -1,6 +1,6 @@
 // Import the functions you need from the SDKs you need
 import { initializeApp } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-app.js";
-import { getFirestore, doc, getDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
+import { getFirestore, doc, getDoc,setDoc } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-firestore.js";
 import { getAuth, onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/11.2.0/firebase-auth.js";
 
 // TODO: Add SDKs for Firebase products that you want to use
@@ -78,21 +78,71 @@ onAuthStateChanged(auth, async (user) => {
     }
 });
 
+
+// Function to validate input fields using regex
+function validateInputs() {
+    const nameRegex = /^[a-zA-Z]+$/; // Only letters allowed
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/; // Basic email validation
+    const unameRegex = /^[a-zA-Z0-9_]{3,15}$/; // Username: 3-15 chars, letters, numbers, and underscore
+    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,}$/; // Minimum 6 characters, at least one letter and one number
+
+    // Validate First Name & Last Name
+    if (!nameRegex.test(firstNameInput.value)) {
+        alert("First name must contain only letters.");
+        return false;
+    }
+    if (!nameRegex.test(lastNameInput.value)) {
+        alert("Last name must contain only letters.");
+        return false;
+    }
+
+    // Validate Email
+    if (!emailRegex.test(emailInput.value)) {
+        alert("Invalid email format.");
+        return false;
+    }
+
+    // Validate Username
+    if (!unameRegex.test(unameInput.value)) {
+        alert("Username must be 3-15 characters and contain only letters, numbers, and underscores.");
+        return false;
+    }
+
+    // Validate Password & Confirm Password
+    if (!passwordRegex.test(passwordInput.value)) {
+        alert("Password must be at least 6 characters long and contain at least one letter and one number.");
+        return false;
+    }
+    if (passwordInput.value !== rpasswordInput.value) {
+        alert("Passwords do not match.");
+        return false;
+    }
+
+    return true; // Return true if all validations pass
+}
+
+
+
 // Add event listener for form submission (for updating data)
 settingsForm.addEventListener('submit', async (e) => {
     e.preventDefault();
+    if (!validateInputs()) {
+        return
+    }
+
     const user = auth.currentUser;
     if (user) {
         try {
-            const userDocRef = doc(db, "VDS", user.uid);
+            const userDocRef = doc(db, "createUser", user.uid);
             await setDoc(userDocRef, {
                 firstName: firstNameInput.value,
                 lastName: lastNameInput.value,
                 email: emailInput.value,
-                username: unameInput.value,
+                uname: unameInput.value,
                 // Add other fields as needed
             }, { merge: true }); // Use merge to update existing fields
             alert("Settings updated successfully!");
+            location.reload();
         } catch (error) {
             console.error("Error updating settings:", error);
             alert("An error occurred updating your settings.");

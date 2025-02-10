@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tech Blog | TechNewsWorld</title>
+    <title>My Account | TechNewsWorld</title>
 
-    <!-- <link rel="stylesheet" href="../styles/blog.css"> -->
-     <!-- <link rel="stylesheet" href="../styles/reset.css"> -->
+    <link rel="shortcut icon" href="../pics/tnw-icon.jpg" type="image/x-icon">
     <link rel="stylesheet" href="../styles/header.css">
     <link rel="stylesheet" href="../styles/footer.css">
+    <link rel="stylesheet" href="../styles/setting.css">
+    <!-- <link rel="stylesheet" href="./styles/blog.css"> -->
     <style>
 
     </style>
@@ -19,11 +20,11 @@
     <header>
         <div class="header-fixed top" id="header1">
 
-            <!-- <head class="head01">
+            <head class="head01">
                 <nav class="nav01"><a href="#">Get Tech Industry News and Insights in the TechNewsWorld Newsletter »
                         View
                         Sample | Subscribe</a></nav>
-            </head> -->
+            </head>
             <div class="fixed-backgrand">
                 <div class="hdr-top for-desk">
                     <div class="container">
@@ -73,7 +74,7 @@
                         </div>
                         <div class="hdr-ss" id="headHide">
                             <div class="srch-hid">
-                                <h1>ACCOUNT MANAGEMENT</h1>
+                                <h1>DASHBOARD</h1>
                                 <div class="search-con">
                                     <div class="search-container2">
                                         <input type="text" class="search-input2" placeholder="SEARCH">
@@ -97,7 +98,7 @@
         </div>
 
         <div class="srch-sec" id="header2">
-            <h1>ACCOUNT MANAGEMENT</h1>
+            <h1>DASHBOARD</h1>
             <div class="search-con">
                 <div class="search-container">
                     <input type="text" class="search-input" placeholder="SEARCH">
@@ -362,37 +363,61 @@
         </a>
     </header>
 
-    
+
+
     <!-- main part -->
-    <section class="sec01">
+    <section class="create-section ">
         <div class="header">
             <div class="create-head">
-                <div><a href="#">TechNewsWorld </a> • </div> Reset Password
+                <div><a href="../blog.html">TECHNEWSWORLD </a> • </div> DASHBOARD
             </div>
             <div class="date" id="dateTime">January 16, 2025 08:37:11 PM</div>
         </div>
-        <div class="reset-container">
-            <H1>Reset Password</H1>
-            <p>Enter your e-mail address below and ECT News Network will send you the information you need to sign in to your account.</p>
-            <form id="resetForm">
-                <div class="form-group">
-                    <label for="email">Email *</label>
-                    <input type="email" id="email" name="email" required>
-                </div>
-                <button type="submit" class="btn">RESET PASSWORD</button>
-            </form>
-        </div>
+
+        <h1 id="useName"></h1>
+
+        <form id="updatesec" class="updatesec">
+            <label for="Product-name">Product Name <span class="asterisk">*</span></label>
+            <input type="text" id="Product-name" name="ProductName" required>
+
+            <label for="about-product">About Product<span class="asterisk">*</span></label>
+            <input type="text" id="about-product" name="about-product" required>
+
+            <label for="business-type">Business Type <span class="asterisk">*</span></label>
+            <select id="business-type" name="businessType" required>
+                <option value="">--SELECT--</option>
+                <option>Banking/Finance/Accounting</option>
+                <option>Entertainment</option>
+                <option>Wholesale/Retail/Distribution (non-computer)</option>
+                <option>Web Development/Production</option>
+                <option>VAR/VAD/Systems or Network Integrators</option>
+                <option>Media/Publishing</option>
+                <option>Research/Development Lab</option>
+                <option>Medical/Dental/Healthcare</option>
+                <option>Advertising/Marketing/PR</option>
+                <option>Internet Service Provider</option>
+                <option>Insurance/Real Estate/Legal</option>
+                <option>Government (including Military)</option>
+                <option>Education</option>
+                <option>Data Processing Services</option>
+                <option>Construction/Architecture/Engineering</option>
+                <option>Computer/Network Consultant</option>
+                <option>Computer Related Retailer/Wholesaler/Distributor</option>
+                <option>Computer Hardware/Software Manufacturer</option>
+                <option>Communication Carriers/Transportation/Utilities</option>
+                <option>Business Services/Consultant (non-computer)</option>
+                <option>Aerospace/Manufacturing/Process Industries</option>
+                <option>Non-profit</option>
+                <option>Other</option>
+                <option>Other Technology Focus</option>
+            </select>
+
+            <label for="remail">Repeat E-Mail Address <span class="asterisk">*</span></label>
+            <input type="date" id="remail" name="remail" required>
+
+            <button type="submit" class="btn UPDATE">UPDATE</button>
+        </form>
     </section>
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -475,8 +500,6 @@
             </div>
         </div>
     </footer>
-
-
     <div class="copyright">
         <div>Copyright 1998-2025 ECT News Network, Inc. All Rights Reserved.</div>
         <div>
@@ -490,8 +513,8 @@
     </div>
 
     <!-- <script type="module" src="../script/blog.js"></script> -->
-    <script type="module" src="../script/header.js"></script>
-    <!-- <script type="module" src="../script/reset.js"></script> -->
+    <script src="../script/header.js"></script>
+    <!-- <script type="module" src="../script/setting.js"></script> -->
 </body>
 
 </html>

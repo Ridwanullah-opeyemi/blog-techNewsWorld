@@ -110,8 +110,8 @@ function displayComment(commentData) {
     }
 
     newCommentDiv.innerHTML = `
-        <div><strong>Yor Comment</strong></div>
-        <a href="#">${formattedDate}</a>
+        <p><strong>Your Comment</strong></p>
+        <p><a href="#">${formattedDate}</a></p>
         <p>Your comment is awaiting moderation. This is a preview; it will be visible after approval.</p>
         <p>${commentData.comment}</p>
     `;

@@ -525,13 +525,15 @@ hr{
     border: 1px solid rgb(218, 211, 211);
     width: 35%;
     position: fixed;
-    top: 30;
-    left: 500;
+    top: 30px;
+    left: 35%;
+    /*transform: translateX(-50%);  Centers the box horizontally */
     padding: 20px;
     display: none;
-    background-color: #ffff;
+    background-color: #fff;
     border-radius: 5px;
     z-index: 100;
+    box-shadow: 0px 0px 100vw 100vh #101010a7; /* Full-screen shadow */
 }
 
 .signin-container {

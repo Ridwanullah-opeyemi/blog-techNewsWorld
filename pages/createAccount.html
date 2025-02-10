@@ -351,8 +351,8 @@
                 <button type="submit">Sign In</button>
             </form>
             <div class="links">
-                <div>Forgot Password?<a href="./pages/resetpassword.html"> Click here</a></div>
-                <div>Not a member yet? <a href="./pages/createAccount.html">Join now!</a></div>
+                <div>Forgot Password?<a href=".resetpassword.html"> Click here</a></div>
+                <!-- <div>Not a member yet? <a href="./pages/createAccount.html">Join now!</a></div> -->
 
             </div>
         </div>
@@ -504,37 +504,14 @@
                     e-mail address will not be displayed to other users without your authorization and will remain
                     confidential. <a href="#">Privacy Policy</a>.</p>
             </div>
-            <div class="g-recaptcha" data-sitekey="6LdA0k8eAAAAABlR31QtlmMDzU7kQXc0PE7FHhDz">
-                <div style="width: 304px; height: 78px;">
-                    <div>
-                        <iframe title="reCAPTCHA" width="304" height="78" role="presentation" name="a-82pi4oew1z51"
-                            frameborder="0" scrolling="no"
-                            sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-top-navigation allow-modals allow-popups-to-escape-sandbox allow-storage-access-by-user-activation"
-                            src="https://www.google.com/recaptcha/api2/anchor?ar=1&amp;k=6LdA0k8eAAAAABlR31QtlmMDzU7kQXc0PE7FHhDz&amp;co=aHR0cHM6Ly93d3cudGVjaG5ld3N3b3JsZC5jb206NDQz&amp;hl=en&amp;v=1Bq_oiMBd4XPUhKDwr0YL1Js&amp;size=normal&amp;cb=8jw59763otxq">
-
-                        </iframe>
-                    </div>
-                    <textarea id="g-recaptcha-response" name="g-recaptcha-response" class="g-recaptcha-response"
-                        style="width: 250px; height: 40px; border: 1px solid rgb(193, 193, 193); margin: 10px 25px; padding: 0px; resize: none; display: none;">
-
-                        </textarea>
+            <div class="robot-div">
+                <div class="robot-mark">
+                    <input type="checkbox" name="robot" id="robot">
+                    <label for="robot">i'm not a robot</label>
                 </div>
-                <iframe style="display: none;">
-
-                </iframe>
+                <div><img src="../pics/recaptcha.jpg" width="10" alt=""></div>
             </div>
-
-
-
-
-
-            <div class="recaptcha">
-                <input type="checkbox" id="recaptcha" name="recaptcha">
-                <div>
-                    <div class="g-recaptcha" data-sitekey="YOUR_RECAPTCHA_SITE_KEY"></div>
-                    <script src="https://www.google.com/recaptcha/api.js" async defer></script>
-                </div>
-            </div>
+            
 
             <button type="submit" class="btn">SIGN UP</button>
         </form>
