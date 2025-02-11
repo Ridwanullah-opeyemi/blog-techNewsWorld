@@ -316,7 +316,7 @@
 
         </div>
 
-        <a href="#top" class="a">
+        <a class="a">
             <div class="back-up" id="backUp" onclick="
             document.getElementById('backUp').style.display = 'none';
                 ">
@@ -341,22 +341,25 @@
 
             <h2>Existing Members</h2>
             <p>Enter your Email and Password to sign in.</p>
+
+            <div class="msg" id="message"></div>
             <form id="signInForm">
                 <label for="email">Email:</label>
                 <input type="email" id="email" name="email" required><br><br>
-
+              
                 <label for="password">Password:</label>
                 <input type="password" id="password" name="password" required><br><br>
-
+              
                 <button type="submit">Sign In</button>
-            </form>
+              </form>
             <div class="links">
-                <div>Forgot Password?<a href=".resetpassword.html"> Click here</a></div>
-                <!-- <div>Not a member yet? <a href="./pages/createAccount.html">Join now!</a></div> -->
+                <div>Forgot Password?<a href="./pages/resetpassword.html"> Click here</a></div>
+                <div>Not a member yet? <a href="./pages/createAccount.html">Join now!</a></div>
 
             </div>
         </div>
     </section>
+
 
 
 
@@ -403,7 +406,8 @@
             </li>
         </ul>
 
-        <form id="signUpForm">
+        <form id="signUpForm" class="signUpForm">
+            <div class="msg" id="singErrorMsg"></div>
             <label for="first-name">First Name <span class="asterisk">*</span></label>
             <input type="text" id="first-name" name="firstName" required>
 

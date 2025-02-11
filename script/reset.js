@@ -25,17 +25,20 @@ const auth = getAuth()
 
 
 
-const resetForm = document.getElementById('resetForm'); // Get your form element
+const resetForm = document.getElementById('resetForm');
+const errMSG = document.getElementById('errMSG');
 
 resetForm.addEventListener('submit', (e) => {
     e.preventDefault();
+    errMSG.style.color = "black"
+    errMSG.textContent = "Sending user info please wait...  "
     const email = document.getElementById('email').value;
 
     sendPasswordResetEmail(auth, email)
         .then(() => {
-            // Password reset email sent!
-            alert("Password reset link sent to: " + email + "Please check your inbox (and spam folder).");
-            // Optionally redirect the user or clear the form
+    errMSG.style.color = "black"
+            errMSG.textContent = "Password reset link sent to: " + email + "Please check your inbox (and spam folder)."
+            // alert("Password reset link sent to: " + email + "Please check your inbox (and spam folder).");
             resetForm.reset(); // clear the form
         })
         .catch((error) => {
@@ -43,12 +46,18 @@ resetForm.addEventListener('submit', (e) => {
             const errorMessage = error.message;
 
             if (errorCode === 'auth/invalid-email') {
-                alert("Please enter a valid email address.");
+    errMSG.style.color = "red"
+    errMSG.textContent = "Please enter a valid email address."
+                // alert("Please enter a valid email address.");
             } else if (errorCode === 'auth/user-not-found') {
-                alert("There is no user record corresponding to this email.");
+    errMSG.style.color = "red"
+    errMSG.textContent = "There is no user record corresponding to this email."
+                // alert("There is no user record corresponding to this email.");
             }
             else {
-                alert("An error occurred while sending the reset email: " + errorMessage);
+    errMSG.style.color = "red"
+    errMSG.textContent = "An error occurred while sending the mail: " + "Unstable network"
+                // alert("An error occurred while sending the reset email: " + errorMessage);
             }
             console.error("Error sending password reset email:", errorCode, errorMessage);
         });

@@ -64,6 +64,13 @@ onAuthStateChanged(auth, async (user) => {
 
 // Add Comment Function
 addCommentButton.addEventListener('click', addComment);
+commentid.addEventListener('keydown',  ()=>{
+    if (event.key === "Enter") {
+        addComment()
+        // console.log(Event);
+        
+    }
+});
 
 async function addComment() {
     const commentValue = commentInput.value.trim();

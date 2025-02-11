@@ -32,7 +32,8 @@ function validateCheckbox() {
     const robotCheckbox = document.getElementById("robot");
 
     if (!robotCheckbox.checked) {
-        alert("Please confirm that you are not a robot.");
+        singErrorMsg.textContent = "Please confirm that you are not a robot."
+        singErrorMsg.style.color = "red"
         return false;
     }
     return true;
@@ -45,30 +46,45 @@ signUpForm.addEventListener("submit", createUserAccount)
 
 async function createUserAccount(e) {
     e.preventDefault()
+    window.scrollTo({top: 0,behavior: 'smooth'})
+    singErrorMsg.style.color = "black"
+    singErrorMsg.textContent = "Sending user info please wait..."
     if (!validateCheckbox()) {
         return
     }
-    let { firstName, lastName, email, remail, uname, password, rpassword, title, companySize, annualSales, businessType } = signUpForm
-    let details = {
-        firstName: firstName.value,
-        lastName: lastName.value,
-        email: email.value,
-        remails: remail.value,
-        uname: uname.value,
-        passwords: password.value,
-        rpasswords: rpassword.value,
-        title: title.value,
-        companySize: companySize.value,
-        annualSales: annualSales.value,
-        businessType: businessType.value
+    try {
+        let { firstName, lastName, email, remail, uname, password, rpassword, title, companySize, annualSales, businessType } = signUpForm
+        let details = {
+            firstName: firstName.value,
+            lastName: lastName.value,
+            email: email.value,
+            remails: remail.value,
+            uname: uname.value,
+            passwords: password.value,
+            rpasswords: rpassword.value,
+            title: title.value,
+            companySize: companySize.value,
+            annualSales: annualSales.value,
+            businessType: businessType.value
+        }
+        let { passwords, rpasswords, remails, ...detail } = details
+        const res = await createUserWithEmailAndPassword(auth, details.email, details.passwords);
+    
+        const docRef = doc(colRef, res.user.uid);
+        await setDoc(docRef, detail);
+        singErrorMsg.style.color = "black"
+        singErrorMsg.textContent = "User Account created Successfully"
+        alert("User Account created Successfully")
+        window.location.href = "../blog.html"
+        
+    } catch (error) {
+        if (error.message === "Firebase: Error (auth/network-request-failed).") {
+            singErrorMsg.style.color = "red"
+            singErrorMsg.textContent = "Network connection is slow. please try again later"
+            return
+        }
+        
     }
-    let {passwords,rpasswords,remails,...detail } = details
-    const res = await createUserWithEmailAndPassword(auth, details.email, details.passwords);
-
-    const docRef = doc(colRef, res.user.uid);
-    await setDoc(docRef, detail);
-    alert("User Account created Successfully")
-    window.location.href = "../blog.html"
 }
 
 

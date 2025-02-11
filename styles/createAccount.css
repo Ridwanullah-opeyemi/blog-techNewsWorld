@@ -139,7 +139,7 @@ select {
     margin-left: 10px;
 }
 
-form {
+.signUpForm {
     width: 65%;
 }
 
@@ -223,7 +223,7 @@ button {
         width: 100%;
         padding: 10px;
     }
-    form {
+    .signUpForm {
         width: 100%;
     }
     input, select{
